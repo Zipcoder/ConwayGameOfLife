@@ -1,5 +1,8 @@
 package com.zipcodeconway;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class ConwayGameOfLife {
 
     private Integer dimension;
@@ -18,7 +21,16 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[dimension][dimension];
+        int[][] randomArray = new int[dimension][dimension];
+
+        Random random = new Random();
+        for (int i = 0; i < randomArray.length; i++) {
+            for (int j = 0; j < randomArray[i].length; j++) {
+                int zeroOrOne = random.nextInt(2);
+                randomArray[i][j] = zeroOrOne;
+            }
+        }
+        return randomArray;
     }
 
     public int[][] simulate(Integer maxGenerations) {
@@ -46,17 +58,24 @@ public class ConwayGameOfLife {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
         int[][] endingWorld = sim.simulate(50);
 
-        int[][] testArray1 = { {0, 0, 0, 0, 0},
+//        int[][] testArray3 = sim.createRandomStart(5);
+//
+//        for (int i = 0; i < testArray3.length; i++) {
+//            System.out.println("row " + i + ": " + Arrays.toString(testArray3[i]));
+//        }
+
+        int[][] currentArray = {
+                {0, 0, 0, 0, 0},
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0} };
-
-        int[][] testArray2 = { {0, 0, 0, 0, 0},
-                {0, 0, 1, 0, 0},
+        int[][] nextArray = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
                 {0, 1, 1, 1, 0},
-                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0} };
     }
-    
+
 }
