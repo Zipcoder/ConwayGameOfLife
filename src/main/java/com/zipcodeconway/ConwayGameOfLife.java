@@ -7,6 +7,7 @@ public class ConwayGameOfLife {
     private static final int fDEFAULT_GAME_SIZE = 50;
     private int size;
     private int[][] startingGen; //maybe not need
+    private SimpleWindow app;
 
     public ConwayGameOfLife(Integer dimension) {
         size = dimension;
@@ -18,9 +19,20 @@ public class ConwayGameOfLife {
         startingGen = startmatrix;
     }
 
+    public void setApp(SimpleWindow app) {
+        this.app = app;
+    }
+
     public static void main(String[] args) {
-        ConwayGameOfLife sim = new ConwayGameOfLife(fDEFAULT_GAME_SIZE);
-        int[][] endingWorld = sim.simulate(fDEFAULT_GAME_SIZE);
+        int gameSize = fDEFAULT_GAME_SIZE;
+
+        ConwayGameOfLife sim = new ConwayGameOfLife(gameSize);
+        SimpleWindow app = new SimpleWindow(gameSize);
+        sim.setApp(app);
+
+        int[][] endingWorld = sim.simulate(gameSize);
+        app.display(endingWorld, gameSize);
+        //app.sleep(30000);
     }
 
     // Contains the logic for the starting scenario.
@@ -42,6 +54,8 @@ public class ConwayGameOfLife {
         int[][] nextGen = new int[size][size];
 
         for (int gen = 0; gen <= maxGenerations; gen++) {
+            app.display(currentGen, gen);
+            app.sleep(100);
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     nextGen[i][j] = isAlive(i, j, currentGen);
@@ -61,8 +75,6 @@ public class ConwayGameOfLife {
         }
     }
 
-    // Calculate if an individual cell should be alive in the next generation.
-    // Based on the game logic:
 	/*
 		Any live cell with fewer than two live neighbours dies, as if by needs caused by underpopulation.
 		Any live cell with more than three live neighbours dies, as if by overcrowding.
@@ -97,11 +109,13 @@ public class ConwayGameOfLife {
         return world[row][rC];
     }
 
+    //return sum of the three cells above
     private int getTop(int row, int col, int[][] world) {
         int tR = (row == 0) ? (size - 1) : (row - 1);
         return world[tR][col] + getLeft(tR, col, world) + getRight(tR, col, world);
     }
 
+    //return sum of the three cells below
     private int getBottom(int row, int col, int[][] world) {
         int bR = (row == (size - 1)) ? 0 : (row + 1);
         return world[bR][col] + getLeft(bR, col, world) + getRight(bR, col, world);
