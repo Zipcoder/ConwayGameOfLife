@@ -26,7 +26,7 @@ public class ConwayGameOfLife {
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
+    public void copyAndZeroOut(int[][] next, int[][] current) {
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -38,6 +38,40 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        return 0;
+      return getLeft(row, col, world) +
+                getRight(row, col, world) +
+              getAboveRow(row, col, world) +
+              getBelowRow(row, col, world);
+
     }
+
+    // return 1 if the cell to the left is alive, 0 if not
+    private int getLeft(int row, int col, int[][] world) {
+        return -1;
+    }
+
+    // return 1 if the cell to the right is alive, 0 if not
+    private int getRight(int row, int col, int[][] world) {
+        return -1;
+    }
+
+    private int getTop(int row, int col, int[][] world) {
+        return -1;
+    }
+
+    private int getBottom(int row, int col, int[][] world) {
+        return -1;
+    }
+
+    // return the live cells in the row above
+    private int getAboveRow(int row, int col, int[][] world) {
+        return -1;
+    }
+
+    // return the live cells in the row below
+    private int getBelowRow(int row, int col, int[][] world) {
+        return -1;
+    }
+
+
 }
