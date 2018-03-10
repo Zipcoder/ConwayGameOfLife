@@ -43,4 +43,33 @@ public class ConwayGameOfLifeTest {
         int[][] results = sim.simulate(10);
         assertTrue(java.util.Arrays.deepEquals(results, expected));
     }
+
+    @Test
+    public void copyAndZeroOutTest() {
+        int[][] expectedNextArrayBefore = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0} };
+        int[][] expectedNextArrayAfter = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0} };
+        int[][] expectedCurrentArrayBefore = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0} };
+        int[][] expectedCurrentArrayAfter = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0} };
+    }
+
 }
