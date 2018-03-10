@@ -51,6 +51,22 @@ public class SimpleWindow {
     }
 
     public static void main(String[] args) {
-        System.out.println("test");
+        SimpleWindow sw = new SimpleWindow(40);
+        int[][] testArray1 = { {0, 0, 0, 0, 0},
+                               {0, 0, 1, 0, 0},
+                               {0, 0, 1, 0, 0},
+                               {0, 0, 1, 0, 0},
+                               {0, 0, 0, 0, 0} };
+
+        int[][] testArray2 = { {0, 0, 0, 0, 0},
+                               {0, 0, 1, 0, 0},
+                               {0, 1, 1, 1, 0},
+                               {0, 0, 1, 0, 0},
+                               {0, 0, 0, 0, 0} };
+
+        sw.display(testArray1, 125);
+        sw.display(testArray2, 125);
+
+
     }
 }
