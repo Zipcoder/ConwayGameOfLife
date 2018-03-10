@@ -15,16 +15,14 @@ public class ConwayGameOfLife {
         this.displayWindow = new SimpleWindow(dimension);
         this.currentGeneration = createRandomStart(dimension);
         this.nextGeneration = new int[dimension][dimension];
-        this.edge = dimension-1;
-     }
+        this.edge = dimension - 1;
+    }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
         this.currentGeneration = startmatrix;
         this.nextGeneration = new int[dimension][dimension];
-        this.edge = dimension-1;
-
-
+        this.edge = dimension - 1;
     }
 
     public static void main(String[] args) {
@@ -39,19 +37,16 @@ public class ConwayGameOfLife {
         Random liveOrDead = new Random();
         int[][] randomStart = new int[dimension][dimension];
 
-        for (int i = 0; i <dimension; i++) {
-            for (int j = 0; j <dimension; j++) {
-            randomStart[i][j] = liveOrDead.nextInt(101)+0 >65 ? 0 : 1;
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                randomStart[i][j] = liveOrDead.nextInt(101) + 0 > 65 ? 0 : 1;
             }
         }
-
-
-
         return randomStart;
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        for(int i = 0; i<=maxGenerations; i++) {
+        for (int i = 0; i <= maxGenerations; i++) {
             this.displayWindow.display(currentGeneration, generations);
             this.displayWindow.sleep(125);
             this.copyAndZeroOut();
@@ -63,13 +58,13 @@ public class ConwayGameOfLife {
     // and then zero out the contents of 'next' matrix
     private void copyAndZeroOut() {
 
-        for(int i = 0; i<= edge; i++){
-            for(int j = 0; j<= edge; j++){
-                nextGeneration[i][j] = this.isAlive(i,j,currentGeneration);
+        for (int i = 0; i <= edge; i++) {
+            for (int j = 0; j <= edge; j++) {
+                nextGeneration[i][j] = this.isAlive(i, j, currentGeneration);
             }
         }
-        for(int i = 0; i<= edge; i++){
-            for(int j = 0; j<= edge; j++){
+        for (int i = 0; i <= edge; i++) {
+            for (int j = 0; j <= edge; j++) {
                 currentGeneration[i][j] = nextGeneration[i][j];
                 nextGeneration[i][j] = 0;
             }
@@ -88,22 +83,22 @@ public class ConwayGameOfLife {
     private int isAlive(int row, int col, int[][] world) {
         int liveCells = 0;
 
-        for(int i = row-1; i<=row+1; i++){
+        for (int i = row - 1; i <= row + 1; i++) {
             int iLooker = i;
-            if(i<0) iLooker = edge;
-            else if (i>edge) iLooker = 0;
+            if (i < 0) iLooker = edge;
+            else if (i > edge) iLooker = 0;
 
-            for(int j = col-1; j<=col +1; j++){
+            for (int j = col - 1; j <= col + 1; j++) {
                 int jLooker = j;
-                if(j<0) jLooker = edge;
-                else if (j>edge) jLooker = 0;
+                if (j < 0) jLooker = edge;
+                else if (j > edge) jLooker = 0;
 
-                if(world[iLooker][jLooker] == 1) liveCells++;
+                if (world[iLooker][jLooker] == 1) liveCells++;
             }
         }
 
-        if(liveCells == 3) return 1;
-        else if(liveCells == 4) return world[row][col];
+        if (liveCells == 3) return 1;
+        else if (liveCells == 4) return world[row][col];
         else return 0;
     }
 }
