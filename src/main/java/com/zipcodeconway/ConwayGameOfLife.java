@@ -1,17 +1,20 @@
 package com.zipcodeconway;
 
-import java.util.Arrays;
+
+import java.util.Random;
 
 public class ConwayGameOfLife {
-    SimpleWindow displayWindow;
-    int[][] currentGeneration;
-    int[][] nextGeneration;
-    int generations;
-    int edge;
+    private SimpleWindow displayWindow;
+    private int[][] currentGeneration;
+    private int[][] nextGeneration;
+    private int generations;
+    private int edge;
 
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
+        this.currentGeneration = createRandomStart(dimension);
+        this.nextGeneration = new int[dimension][dimension];
         this.edge = dimension-1;
      }
 
@@ -25,21 +28,32 @@ public class ConwayGameOfLife {
     }
 
     public static void main(String[] args) {
-        ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        int[][] endingWorld = sim.simulate(50);
+        ConwayGameOfLife sim = new ConwayGameOfLife(100);
+        int[][] endingWorld = sim.simulate(1000);
     }
 
     // Contains the logic for the starting scenario.
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[1][1];
+        Random liveOrDead = new Random();
+        int[][] randomStart = new int[dimension][dimension];
+
+        for (int i = 0; i <dimension; i++) {
+            for (int j = 0; j <dimension; j++) {
+            randomStart[i][j] = liveOrDead.nextInt(101)+0 >65 ? 0 : 1;
+            }
+        }
+
+
+
+        return randomStart;
     }
 
     public int[][] simulate(Integer maxGenerations) {
         for(int i = 0; i<=maxGenerations; i++) {
             this.displayWindow.display(currentGeneration, generations);
-            this.displayWindow.sleep(125);
+            this.displayWindow.sleep(75);
             this.copyAndZeroOut();
         }
         return currentGeneration;
@@ -47,21 +61,16 @@ public class ConwayGameOfLife {
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut() {
+    private void copyAndZeroOut() {
 
         for(int i = 0; i<= edge; i++){
-            for(int j = 0; j<=edge; j++){
+            for(int j = 0; j<= edge; j++){
                 nextGeneration[i][j] = this.isAlive(i,j,currentGeneration);
-                //System.out.println(this.isAlive(i,j,currentGeneration));
             }
         }
         for(int i = 0; i<= edge; i++){
-            for(int j = 0; j<=edge; j++){
+            for(int j = 0; j<= edge; j++){
                 currentGeneration[i][j] = nextGeneration[i][j];
-            }
-        }
-        for(int i = 0; i<= edge; i++){
-            for(int j = 0; j<=edge; j++){
                 nextGeneration[i][j] = 0;
             }
         }
@@ -82,14 +91,12 @@ public class ConwayGameOfLife {
         for(int i = row-1; i<=row+1; i++){
             int iLooker = i;
             if(i<0) iLooker = edge;
-            else if (i>edge) iLooker =0;
-            //else iLooker = i;
+            else if (i>edge) iLooker = 0;
 
             for(int j = col-1; j<=col +1; j++){
                 int jLooker = j;
                 if(j<0) jLooker = edge;
-                else if (j>edge) jLooker =0;
-                //else jLooker = j;
+                else if (j>edge) jLooker = 0;
 
                 if(world[iLooker][jLooker] == 1) liveCells++;
             }
