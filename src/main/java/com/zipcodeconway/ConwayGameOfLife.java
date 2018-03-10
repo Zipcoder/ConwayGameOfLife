@@ -1,5 +1,8 @@
 package com.zipcodeconway;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class ConwayGameOfLife {
     private static final int fDEFAULT_GAME_SIZE = 50;
     private int size;
@@ -7,11 +10,12 @@ public class ConwayGameOfLife {
 
     public ConwayGameOfLife(Integer dimension) {
         size = dimension;
+        startingGen = createRandomStart(dimension);
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         size = dimension;
-        copyAndZeroOut(startingGen, startmatrix);
+        startingGen = startmatrix;
     }
 
     public static void main(String[] args) {
@@ -23,29 +27,38 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[1][1];
+        int[][] randomWorld = new int[dimension][dimension];
+        Random rand = new Random();
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                randomWorld[i][j] = (rand.nextInt(100) > 70) ? 1 : 0;
+            }
+        }
+        return randomWorld;
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        int[][] currentGen = new int[1][1];
-        copyAndZeroOut(startingGen, currentGen);
-
+        int[][] currentGen = startingGen;
         int[][] nextGen = new int[size][size];
 
-        for (int gen = 0; gen < maxGenerations; gen++) {
+        for (int gen = 1; gen < maxGenerations; gen++) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
-                     nextGen[i][j] = isAlive(i, j, currentGen);
+                    nextGen[i][j] = isAlive(i, j, currentGen);
                 }
             }
-            copyAndZeroOut(currentGen, nextGen);
+            copyAndZeroOut(nextGen, currentGen);
         }
-        return new int[1][1];
+        return currentGen;
     }
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int[][] next, int[][] current) {
+        for (int i = 0; i < current.length; i++) {
+            System.arraycopy(next[i], 0, current[i], 0, next[i].length);
+            Arrays.fill(next[i], 0);
+        }
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -57,7 +70,7 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        int liveNeighbors =  getLeft(row, col, world) +
+        int liveNeighbors = getLeft(row, col, world) +
                 getRight(row, col, world) +
                 getTop(row, col, world) +
                 getBottom(row, col, world);
@@ -74,23 +87,23 @@ public class ConwayGameOfLife {
 
     // return 1 if the cell to the left is alive, 0 if not
     private int getLeft(int row, int col, int[][] world) {
-        int lC = (col == 0) ? size - 1 : (col - 1);
+        int lC = (col == 0) ? (size - 1) : (col - 1);
         return world[row][lC];
     }
 
     // return 1 if the cell to the right is alive, 0 if not
     private int getRight(int row, int col, int[][] world) {
-        int rC = (col == size - 1) ? 0 : (row + 1);
-        return world[rC][col];
+        int rC = (col == (size - 1)) ? 0 : (col + 1);
+        return world[row][rC];
     }
 
     private int getTop(int row, int col, int[][] world) {
-        int tR = (row == 0) ? size - 1 : (row - 1);
+        int tR = (row == 0) ? (size - 1) : (row - 1);
         return world[tR][col] + getLeft(tR, col, world) + getRight(tR, col, world);
     }
 
     private int getBottom(int row, int col, int[][] world) {
-        int bR = (row == size - 1) ? 0 : (row + 1);
+        int bR = (row == (size - 1)) ? 0 : (row + 1);
         return world[bR][col] + getLeft(bR, col, world) + getRight(bR, col, world);
     }
 }
