@@ -1,5 +1,7 @@
 package com.zipcodeconway;
 
+import java.util.Arrays;
+
 public class ConwayGameOfLife {
     SimpleWindow displayWindow;
     int[][] currentGeneration;
@@ -16,7 +18,9 @@ public class ConwayGameOfLife {
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
         this.currentGeneration = startmatrix;
+        this.nextGeneration = new int[dimension][dimension];
         this.edge = dimension-1;
+
 
     }
 
@@ -33,14 +37,35 @@ public class ConwayGameOfLife {
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        this.displayWindow.display(currentGeneration,generations);
-        this.displayWindow.sleep(125);
-        return new int[1][1];
+        for(int i = 0; i<=maxGenerations; i++) {
+            this.displayWindow.display(currentGeneration, generations);
+            this.displayWindow.sleep(125);
+            this.copyAndZeroOut();
+        }
+        return currentGeneration;
     }
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
+    public void copyAndZeroOut() {
+
+        for(int i = 0; i<= edge; i++){
+            for(int j = 0; j<=edge; j++){
+                nextGeneration[i][j] = this.isAlive(i,j,currentGeneration);
+                //System.out.println(this.isAlive(i,j,currentGeneration));
+            }
+        }
+        for(int i = 0; i<= edge; i++){
+            for(int j = 0; j<=edge; j++){
+                currentGeneration[i][j] = nextGeneration[i][j];
+            }
+        }
+        for(int i = 0; i<= edge; i++){
+            for(int j = 0; j<=edge; j++){
+                nextGeneration[i][j] = 0;
+            }
+        }
+        generations++;
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -52,18 +77,19 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        int liveCells=0;
-        for(int i = row-1; i<row+1; i++){
-            int iLooker;
+        int liveCells = 0;
+
+        for(int i = row-1; i<=row+1; i++){
+            int iLooker = i;
             if(i<0) iLooker = edge;
             else if (i>edge) iLooker =0;
-            else iLooker = i;
+            //else iLooker = i;
 
-            for(int j = col-1; j<col +1; j++){
-                int jLooker;
+            for(int j = col-1; j<=col +1; j++){
+                int jLooker = j;
                 if(j<0) jLooker = edge;
                 else if (j>edge) jLooker =0;
-                else jLooker = j;
+                //else jLooker = j;
 
                 if(world[iLooker][jLooker] == 1) liveCells++;
             }
@@ -72,6 +98,5 @@ public class ConwayGameOfLife {
         if(liveCells == 3) return 1;
         else if(liveCells == 4) return world[row][col];
         else return 0;
-
     }
 }
