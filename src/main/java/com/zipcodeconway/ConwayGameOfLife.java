@@ -41,7 +41,7 @@ public class ConwayGameOfLife {
         int[][] currentGen = startingGen;
         int[][] nextGen = new int[size][size];
 
-        for (int gen = 1; gen < maxGenerations; gen++) {
+        for (int gen = 0; gen <= maxGenerations; gen++) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     nextGen[i][j] = isAlive(i, j, currentGen);
