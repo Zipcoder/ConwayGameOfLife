@@ -53,7 +53,7 @@ public class ConwayGameOfLife {
     public int[][] simulate(Integer maxGenerations) {
         for(int i = 0; i<=maxGenerations; i++) {
             this.displayWindow.display(currentGeneration, generations);
-            this.displayWindow.sleep(50);
+            this.displayWindow.sleep(125);
             this.copyAndZeroOut();
         }
         return currentGeneration;
