@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e282cee1-bfe9-42a3-9794-9633eb4654d1" name="Default" comment="" />
+    <list default="true" id="e282cee1-bfe9-42a3-9794-9633eb4654d1" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Screen Shot 2018-03-10 at 2.03.29 PM.png" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,12 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SimpleWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state relative-caret-position="-1">
+              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -24,51 +27,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConwayGameOfLife.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConwayGameOfLife.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding>
-                <element signature="e#585#586#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#1429#1430#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JAVA/com.zipcodeconway.ConwayGameOfLife" pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/com.zipcodeconway.ConwayGameOfLife">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>com.zipcodeconway.ConwayGameOfLife</OriginalElement>
-              <nodes>
-                <node x="-54.0" y="-179.0">com.zipcodeconway.ConwayGameOfLife</node>
-              </nodes>
-              <notes />
-              <edges />
-              <settings layout="Hierarchic Group" zoom="1.0" x="-203.0" y="-1.0" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Constructors</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
+      <file leaf-file-name="ConwayLifeRandomat50.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConwayLifeRandomat50.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/README.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="236">
-                <caret line="52" column="194" lean-forward="false" selection-start-line="52" selection-start-column="194" selection-end-line="52" selection-end-column="194" />
+              <first_editor relative-caret-position="-116">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -76,11 +61,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConwayGameOfLifeTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConwayLifeUML.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConwayLifeUML.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConwayGameOfLifeTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="225">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -125,9 +117,12 @@
         <option value="$PROJECT_DIR$/src/main/java/SimpleWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/ConwayGameOfLife.java" />
         <option value="$PROJECT_DIR$/src/main/java/Life.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/README.md" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/Cell.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zipcodeconway/CellMovementTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" />
       </list>
     </option>
@@ -138,10 +133,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
+    <option name="x" value="40" />
     <option name="y" value="32" />
-    <option name="width" value="1440" />
+    <option name="width" value="1400" />
     <option name="height" value="821" />
   </component>
   <component name="ProjectView">
@@ -159,55 +161,58 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zipcodeconway" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Game-Of-Life-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game-Of-Life-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConwayGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwayGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -217,10 +222,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,14 +240,15 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.zipcodeconway" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -260,7 +263,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConwayGameOfLifeTest">
+  <component name="RunManager" selected="Application.ConwayGameOfLife">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -481,8 +484,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ConwayGameOfLifeTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ConwayGameOfLife" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ConwayGameOfLife" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ConwayGameOfLifeTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.ConwayGameOfLifeTest.runTest2" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.ConwayGameOfLifeTest.runTest" />
         <item index="4" class="java.lang.String" itemvalue="Application.GameofLife" />
@@ -503,72 +506,78 @@
       <option name="presentableId" value="Default" />
       <updated>1519668901598</updated>
       <workItem from="1519668902904" duration="14517000" />
+      <workItem from="1520629782596" duration="3379000" />
+      <workItem from="1520694045612" duration="7661000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 15h 45m 01s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 21m 12s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 15h 59m 00s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 26m 00s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 02m 03s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 26m 11s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 03m 01s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 32m 41s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 05m 07s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 32m 44s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 06m 11s.xml">
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 33m 22s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest - 2018.02.26 at 15h 41m 14s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest" configurationId="JUnit" />
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 33m 54s.xml">
+      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest2 - 2018.02.26 at 15h 42m 02s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest2" configurationId="JUnit" />
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 35m 47s.xml">
+      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest2 - 2018.02.26 at 15h 42m 18s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest2" configurationId="JUnit" />
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 35m 49s.xml">
+      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.10 at 13h 40m 49s.xml">
+      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14517000" />
+    <option name="totallyTimeSpent" value="25557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="32" width="1440" height="821" extended-state="0" />
+    <frame x="40" y="32" width="1400" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970026" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32506886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2569956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45316803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,35 +588,81 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LifeStarts.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="570">
+          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Life.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="87" column="5" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="87" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LifeStarts.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Life.java" />
     <entry file="uml://JAVA/com.zipcodeconway.ConwayGameOfLife">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -629,39 +684,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/README.md">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/README.md" />
+    <entry file="file://$USER_HOME$/Downloads/ConwayLifeRandomat50.png" />
+    <entry file="file://$USER_HOME$/Documents/gitea/gitea/custom/public/img/ConwayLifeUML.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/GameofLife.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/CellMovementTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConwayLifeUML.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConwayLifeRandomat50.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="236">
-            <caret line="52" column="194" lean-forward="false" selection-start-line="52" selection-start-column="194" selection-end-line="52" selection-end-column="194" />
+          <first_editor relative-caret-position="-116">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/ConwayLifeRandomat50.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/gitea/gitea/custom/public/img/ConwayLifeUML.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameofLife.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="83" column="17" lean-forward="false" selection-start-line="82" selection-start-column="30" selection-end-line="83" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="-1">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -670,23 +761,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding>
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +811,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -767,6 +848,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: junit:junit:4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
