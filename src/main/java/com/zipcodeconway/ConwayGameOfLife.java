@@ -77,4 +77,5 @@ public class ConwayGameOfLife {
     private int isAlive(int row, int col, int[][] world) {
         return 0;
     }
+
 }
