@@ -131,25 +131,22 @@ public class ConwayGameOfLifeTest {
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0}};
         game = new ConwayGameOfLife(5, start);
-        int expected = 1;
-        int actual = game.isAlive(5, 2, start);
+        int expected = 0;
+        int actual = game.isAlive(4, 2, start);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void subworldCenterTest(){
+    public void isAliveEdgeTest2(){
         int[][] start = {
-                {0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 0},
                 {0, 1, 1, 0, 0},
                 {0, 1, 0, 0, 0},
                 {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0}};
+                {0, 0, 1, 0, 0}};
         game = new ConwayGameOfLife(5, start);
-        int[][] expected = {
-                {2, 3, 4},
-                {2, 3, 4}
-        };
-        int[][] actual = game.neighborCoordGenerator(3, 3);
+        int expected = 1;
+        int actual = game.isAlive(4, 2, start);
         Assert.assertEquals(expected, actual);
     }
 
@@ -163,12 +160,26 @@ public class ConwayGameOfLifeTest {
     public void loopCheckEdge(){
         game = new ConwayGameOfLife(5);
         System.out.println(game.getSize());
-        Assert.assertEquals(5, game.loopCheck(-1));
+        Assert.assertEquals(4, game.loopCheck(-1));
     }
 
     @Test
     public void loopCheckEdge2(){
         game = new ConwayGameOfLife(5);
-        Assert.assertEquals(0, game.loopCheck(6));
+        Assert.assertEquals(0, game.loopCheck(5));
+    }
+
+    @Test
+    public void loopCheckEdge3(){
+        game = new ConwayGameOfLife(5);
+        System.out.println(game.getSize());
+        Assert.assertEquals(3, game.loopCheck(-2));
+    }
+
+    @Test
+    public void loopCheckEdge4(){
+        game = new ConwayGameOfLife(5);
+        System.out.println(game.getSize());
+        Assert.assertEquals(1, game.loopCheck(6));
     }
 }

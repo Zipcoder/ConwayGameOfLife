@@ -83,9 +83,13 @@ public class ConwayGameOfLife {
 
     private int countNeighbors(int row, int col, int[][] world) {
         int neighborCount = 0;
+        int tempRow = 0;
+        int tempCol = 0;
         for (int i = row-1; i <= row+1; i++){
             for (int j = col -1; j <= col + 1; j++){
-                if (world[i][j] == 1 && !(i == row && j == col)) {
+                tempRow = loopCheck(i);
+                tempCol = loopCheck(j);
+                if (world[tempRow][tempCol] == 1 && !(i == row && j == col)) {
                     neighborCount++;
                 } else {
                 }
@@ -94,17 +98,9 @@ public class ConwayGameOfLife {
         return neighborCount;
     }
 
-    public int[][] neighborCoordGenerator(int row, int col){
-        int[][] subworld = new int[2][3];
-        for (int i = row-1; i <= row+1; i++){
-
-        }
-        return subworld;
-    }
-
     public int loopCheck(int coord){
-        if (coord < 0) return this.size - coord;
-        if (coord > this.size) return coord - this.size;
+        if (coord < 0) return this.size + coord;
+        if (coord >= this.size) return coord - this.size;
         return coord;
     }
 
