@@ -29,7 +29,7 @@ public class ConwayGameOfLife {
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        int[][] endingWorld = sim.simulate(500);
+        int[][] endingWorld = sim.simulate(1000);
     }
 
     // Contains the logic for the starting scenario.
@@ -55,7 +55,7 @@ public class ConwayGameOfLife {
                 }
             }
             this.window.display(nextBoard, currentGen);
-            this.window.sleep(300);
+            this.window.sleep(125);
             copyAndZeroOut(nextBoard);
             currentGen++;
         }
