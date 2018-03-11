@@ -1,5 +1,7 @@
 package com.zipcodeconway;
 
+import java.util.Random;
+
 public class ConwayGameOfLife {
 
     private SimpleWindow window;
@@ -29,7 +31,11 @@ public class ConwayGameOfLife {
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
         int[][] randoStarto = new int[dimension][dimension];
-
+        for (int i = 0; i < randoStarto.length; i++) {
+            for (int j = 0; j < randoStarto[i].length; j++) {
+                randoStarto[i][j] = new Random().nextInt(2);
+            }
+        }
         return randoStarto;
     }
 
