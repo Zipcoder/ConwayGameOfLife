@@ -24,7 +24,7 @@ public class ConwayGameOfLifeTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0}};
         ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
-        int[][] results = sim.simulate(9);
+        int[][] results = sim.simulate(10);
         assertTrue(java.util.Arrays.deepEquals(results, expected));
     }
 
@@ -43,7 +43,86 @@ public class ConwayGameOfLifeTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0}};
         ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
+        int[][] results = sim.simulate(11);
+        System.out.println(results[2][2]);
+        assertTrue(java.util.Arrays.deepEquals(results, expected));
+    }
+
+    @Test
+    public void runTest3() {
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
         int[][] results = sim.simulate(10);
+        System.out.println(results[2][2]);
+        assertTrue(java.util.Arrays.deepEquals(results, expected));
+    }
+
+    @Test
+    public void runTest4() {
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0},
+                {0, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0},
+                {0, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
+        int[][] results = sim.simulate(5);
+        System.out.println(results[2][2]);
+        assertTrue(java.util.Arrays.deepEquals(results, expected));
+    }
+
+    @Test
+    public void runTest5() {
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0}};
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
+        int[][] results = sim.simulate(1);
+        assertTrue(java.util.Arrays.deepEquals(results, expected));
+    }
+
+    @Test
+    public void runTest6() {
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0}};
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0}};
+        ConwayGameOfLife sim = new ConwayGameOfLife(5, start);
+        int[][] results = sim.simulate(2);
         assertTrue(java.util.Arrays.deepEquals(results, expected));
     }
 
@@ -159,7 +238,6 @@ public class ConwayGameOfLifeTest {
     @Test
     public void loopCheckEdge(){
         game = new ConwayGameOfLife(5);
-        System.out.println(game.getSize());
         Assert.assertEquals(4, game.loopCheck(-1));
     }
 
@@ -172,14 +250,44 @@ public class ConwayGameOfLifeTest {
     @Test
     public void loopCheckEdge3(){
         game = new ConwayGameOfLife(5);
-        System.out.println(game.getSize());
         Assert.assertEquals(3, game.loopCheck(-2));
     }
 
     @Test
     public void loopCheckEdge4(){
         game = new ConwayGameOfLife(5);
-        System.out.println(game.getSize());
         Assert.assertEquals(1, game.loopCheck(6));
     }
+
+    @Test
+    public void copyZeroOutTest(){
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0}};
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}};
+        game = new ConwayGameOfLife(5, start);
+        game.copyAndZeroOut(expected);
+        Assert.assertEquals(game.getBoard(), expected);
+    }
+
+    @Test
+    public void constructorTest(){
+        int[][] start = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0}};
+        game = new ConwayGameOfLife(5, start);
+        Assert.assertEquals(game.getBoard(), start);
+    }
+
 }

@@ -9,6 +9,10 @@ public class ConwayGameOfLife {
         return size;
     }
 
+    public int[][] getBoard() {
+        return board;
+    }
+
     public ConwayGameOfLife(){
         this(50);
     }
@@ -21,12 +25,11 @@ public class ConwayGameOfLife {
         this.window = new SimpleWindow(dimension);
         this.board = startMatrix;
         this.size = dimension;
-        window.display(startMatrix, 1);
     }
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        int[][] endingWorld = sim.simulate(50);
+        int[][] endingWorld = sim.simulate(500);
     }
 
     // Contains the logic for the starting scenario.
@@ -43,22 +46,32 @@ public class ConwayGameOfLife {
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        int currentGen = 1;
-        int[][] currentBoard = this.board;
+        int currentGen = 0;
+        int[][] nextBoard = new int[this.size][this.size];
         while (currentGen < maxGenerations){
-            for (int i = 0; i < size; i++){
-                for (int j = 0; j < size; j++){
-                    currentBoard[i][j] = isAlive(i, j, currentBoard);
+            for (int i = 0; i < this.size; i++){
+                for (int j = 0; j < this.size; j++){
+                    nextBoard[i][j] = isAlive(i, j, this.board);
                 }
             }
+            this.window.display(nextBoard, currentGen);
+            this.window.sleep(300);
+            copyAndZeroOut(nextBoard);
+            currentGen++;
         }
-        return currentBoard;
+        this.window.display(this.board, maxGenerations);
+        this.window.sleep(3000);
+        return this.board;
     }
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
-
+    public void copyAndZeroOut(int[][] next) {
+        for (int i = 0; i < this.size; i++){
+            for (int j = 0; j < this.size; j++){
+                this.board[i][j] = next[i][j];
+            }
+        }
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -76,7 +89,9 @@ public class ConwayGameOfLife {
             if (neighborCount == 2 || neighborCount == 3) return 1;
             if (neighborCount > 3) return 0;
         } else {
-            if (neighborCount == 3) return 1;
+            if (world[row][col] == 0 && neighborCount == 3){
+                return 1;
+            }
         }
         return 0;
     }
@@ -89,9 +104,8 @@ public class ConwayGameOfLife {
             for (int j = col -1; j <= col + 1; j++){
                 tempRow = loopCheck(i);
                 tempCol = loopCheck(j);
-                if (world[tempRow][tempCol] == 1 && !(i == row && j == col)) {
+                if (world[tempRow][tempCol] == 1 && !(tempRow == row && tempCol == col)) {
                     neighborCount++;
-                } else {
                 }
             }
         }
