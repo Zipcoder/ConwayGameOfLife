@@ -2,14 +2,25 @@ package com.zipcodeconway;
 
 public class ConwayGameOfLife {
 
+    private SimpleWindow window;
+    private int[][] currentGeneration;
+    private int[][] nextGeneration;
+
     public ConwayGameOfLife(Integer dimension) {
+        this.window = new SimpleWindow(dimension);
+        this.currentGeneration = createRandomStart(dimension);
+        this.nextGeneration = new int[dimension][dimension];
      }
 
-    public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
+    public ConwayGameOfLife(Integer dimension, int[][] startMatrix) {
+        this.window = new SimpleWindow(dimension);
+        this.currentGeneration = startMatrix;
+        this.nextGeneration = new int[dimension][dimension];
     }
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
+        sim.simulate(50);
         int[][] endingWorld = sim.simulate(50);
     }
 
@@ -21,7 +32,19 @@ public class ConwayGameOfLife {
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        return new int[1][1];
+        int count = 0;
+        while (count <= maxGenerations) {
+            this.window.display(currentGeneration, maxGenerations);
+            for (int i = 0; i < currentGeneration.length; i++) {
+                for (int j = 0; j < currentGeneration[i].length; j++) {
+                    nextGeneration[i][j] = isAlive(i, j, currentGeneration);
+                }
+            }
+            copyAndZeroOut(nextGeneration, currentGeneration);
+            this.window.sleep(125);
+            count++;
+        }
+        return currentGeneration;
     }
 
     // copy the values of 'next' matrix to 'current' matrix,
