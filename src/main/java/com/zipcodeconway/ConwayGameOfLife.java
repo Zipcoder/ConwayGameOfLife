@@ -28,7 +28,9 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[1][1];
+        int[][] randoStarto = new int[dimension][dimension];
+
+        return randoStarto;
     }
 
     public int[][] simulate(Integer maxGenerations) {
@@ -50,6 +52,12 @@ public class ConwayGameOfLife {
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int [][] next, int[][] current) {
+        for (int i = 0; i < current.length; i++){
+            for (int j = 0; j < current[i].length; j++){
+                current[i][j] = next[i][j];
+                next[i][j] = 0;
+            }
+        }
     }
 
     // Calculate if an individual cell should be alive in the next generation.
