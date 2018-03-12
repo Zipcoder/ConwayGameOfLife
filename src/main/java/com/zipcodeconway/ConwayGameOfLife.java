@@ -26,9 +26,9 @@ public class ConwayGameOfLife {
         System.out.println("How many generations?");
         int generations = input.nextInt();
         System.out.println("How many pixels big will the simulation be?");
-        int simDimentions = input.nextInt();
+        int simDimensions = input.nextInt();
         System.out.println("Running simulation...");
-        ConwayGameOfLife sim = new ConwayGameOfLife(simDimentions);
+        ConwayGameOfLife sim = new ConwayGameOfLife(simDimensions);
         sim.simulate(generations);
         System.out.println("Simulation complete");
     }
