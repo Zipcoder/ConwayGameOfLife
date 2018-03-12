@@ -6,8 +6,7 @@ import java.util.Collections;
 public class ConwayGameOfLife {
     private SimpleWindow displayWindow;
     private int[][] current;
-    private int nbRow;
-    private int nbCol;
+    private int[][] next;
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
@@ -16,7 +15,8 @@ public class ConwayGameOfLife {
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
         this.current = startmatrix;
-        System.arraycopy(createRandomStart(dimension), 0, current, 0, this.current.length);
+        //System.arraycopy(createRandomStart(dimension), 0, current, 0, current.length);
+        next = new int[dimension][dimension];
     }
 
     public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class ConwayGameOfLife {
     // Contains the logic for the starting scenario.
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
-    private int[][] createRandomStart(Integer dimension) {
+    /*private int[][] createRandomStart(Integer dimension) {
         int[][] start = new int[dimension][dimension];
         for (int row = 0; row < start.length; row++) {
             for (int col = 0; col < start[row].length; col++) {
@@ -37,14 +37,13 @@ public class ConwayGameOfLife {
         }
 
         return start;
-    }
+    }*/
     /*loop through generations.
     loop through current maxtrix.
     add is alive value to next matrix.
     at end of loops call copyAndZeroOut.*/
 
     public int[][] simulate(Integer maxGenerations) {
-        int[][] next = new int[current.length][current.length];
         for (int i = 0; i < maxGenerations; i++) {
             this.displayWindow.display(current, maxGenerations);
             for (int row = 0; row < current.length; row++) {
@@ -52,8 +51,9 @@ public class ConwayGameOfLife {
                     next[row][col] = isAlive(row, col, current);
                 }
             }
-            this.displayWindow.sleep(125);
+
             copyAndZeroOut(next, current);
+            this.displayWindow.sleep(125);
         }
         return current;
     }
@@ -62,9 +62,15 @@ public class ConwayGameOfLife {
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int[][] next, int[][] current) {
+        // this.current = current;
         System.arraycopy(next, 0, current, 0, next.length);
+
         //zeros all indexes of next;
-        next = null;
+        for (int i = 0; i < next.length; i++) {
+            for (int j = 0; j < next[i].length; j++) {
+                next[i][j] = 0;
+            }
+        }
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -118,8 +124,8 @@ public class ConwayGameOfLife {
     }
 
     private int checkOutOfBounds(int row, int col, int[][] world) {
-        int theRow = checkRow(row, world.length - 1);
-        int theCol = checkColumn(col, world.length - 1);
+        int theRow = checkRow(row, world.length -1);
+        int theCol = checkColumn(col, world.length -1);
         return world[theRow][theCol];
     }
 
