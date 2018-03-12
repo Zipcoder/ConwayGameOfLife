@@ -1,26 +1,28 @@
 package com.zipcodeconway;
 
+import java.awt.print.Paper;
 import java.util.Random;
-
-import static jdk.nashorn.internal.objects.NativeMath.max;
-import static jdk.nashorn.internal.objects.NativeMath.random;
 
 public class ConwayGameOfLife {
 
     private SimpleWindow displayWindow;
     private int[][] currentGeneration;
     private int[][] nextGeneration;
+    private int edge;
+
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
         this.currentGeneration = createRandomStart(dimension);
         this.nextGeneration = new int[dimension][dimension];
+        this.edge = dimension -1;
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
         this.currentGeneration = startmatrix;
         this.nextGeneration = new int[dimension][dimension];
+        this.edge = dimension -1;
 
     }
 
@@ -44,20 +46,13 @@ public class ConwayGameOfLife {
     }
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
-        for (int row = 0; row < current.length; row++){
-            for (int column = 0; column < current[row].length; column++){
-                current[row][column] = next[row][column];
-                next[row][column] = 0;
-            }
-        }
-    }
     public int[][] simulate(Integer maxGenerations) {
+
         int generation = 0;
-        while (generation <= maxGenerations){
+        while (generation <= maxGenerations) {
             this.displayWindow.display(currentGeneration, maxGenerations);
-            for (int row = 0; row <currentGeneration.length; row++){
-                for (int col = 0; col <currentGeneration[row].length; col++){
+            for (int row = 0; row < currentGeneration.length; row++) {
+                for (int col = 0; col < currentGeneration[row].length; col++) {
                     nextGeneration[row][col] = isAlive(row, col, currentGeneration);
                 }
             }
@@ -66,6 +61,15 @@ public class ConwayGameOfLife {
             generation++;
         }
         return currentGeneration;
+    }
+
+    public void copyAndZeroOut(int[][] next, int[][] current) {
+        for (int row = 0; row < current.length; row++) {
+            for (int column = 0; column < current[row].length; column++) {
+                current[row][column] = next[row][column];
+                next[row][column] = 0;
+            }
+        }
     }
     // Calculate if an individual cell should be alive in the next generation.
     // Based on the game logic:
@@ -76,7 +80,68 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
 
-	private int isAlive(int row, int col, int[][] world) {
+    private int isAlive(int row, int col, int[][] world) {
+        int numNeighbors = 0;
+        int rowEdgeHigh = row+1;
+        int rowEdgeLow = row-1;
+        int colEdgeHigh = col+1;
+        int colEdgeLow = col-1;
+
+        if (rowEdgeHigh > edge){
+            rowEdgeHigh = 0;
+        }
+        if (rowEdgeLow < 0){
+            rowEdgeLow = edge;
+        }
+        if (colEdgeHigh > edge){
+            colEdgeHigh = 0;
+        }
+        if (colEdgeLow < 0){
+            colEdgeLow = edge;
+        }
+
+        // Look NW
+        if(world[rowEdgeLow][colEdgeLow] == 1){
+            numNeighbors++;
+        }
+        // Look N
+        if (world[row][colEdgeLow] == 1){
+            numNeighbors++;
+        }
+        // NE
+        if (world[rowEdgeHigh][colEdgeLow] == 1){
+            numNeighbors++;
+        }
+        // Look W
+        if (world[rowEdgeLow][col] == 1){
+            numNeighbors++;
+        }
+        // Look E
+        if (world[rowEdgeHigh][col] == 1){
+            numNeighbors++;
+        }
+        // Look SW
+        if (world[rowEdgeLow][colEdgeHigh] == 1){
+            numNeighbors++;
+        }
+        // Look S
+        if (world[row][colEdgeHigh] == 1){
+            numNeighbors++;
+        }
+        // Look SE
+        if (world[rowEdgeHigh][colEdgeHigh] == 1){
+            numNeighbors++;
+        }
+
+        if (numNeighbors == 3){
+            return 1;
+        }
+        if (numNeighbors < 2){
+            return 0;
+        }
+        if (numNeighbors > 3){
+            return 0;
+        }
         return world[row][col];
     }
 }
