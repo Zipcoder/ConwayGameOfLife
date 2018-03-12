@@ -35,8 +35,8 @@ public class ConwayGameOfLife {
         int[][] next = new int[50][50];
         for(int i = 0; i<maxGenerations; i++) {
             for (int j = 0; j < current.length; j++) {
-                for (int k = 0; k < current.length; k++) {
-                    next[j][k] = isAlive(j, k, current);
+                for (int k = 0; k < current[i].length; k++) {
+                    current[j][k] = isAlive(j, k, current);
                 }
             }
             copyAndZeroOut(next, current);
@@ -48,7 +48,7 @@ public class ConwayGameOfLife {
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int [][] next, int[][] current) {
         for(int i = 0; i<current.length; i++){
-            for(int j = 0; j<current.length; j++){
+            for(int j = 0; j<current[i].length; j++){
                 current[i][j] = next[i][j];
                 next[i][j] = 0;
             }
@@ -63,27 +63,45 @@ public class ConwayGameOfLife {
 		Any live cell with two or three live neighbours lives, unchanged, to the next generation.
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
-//still needs work, need to account for wrapping around to other side at end of rows
+
     private int isAlive(int row, int col, int[][] world) {
+        int rowTop;
+        int rowBottom;
+        if (row == 0) {
+            rowTop = world.length - 1;
+            rowBottom = row - 1;
+        } else if (row == (world.length - 1)) {
+            rowTop = row + 1;
+            rowBottom = 0;
+        } else {
+            rowTop = row + 1;
+            rowBottom = row - 1;
+        }
+        int colRight;
+        int colLeft;
+        if (col == 0) {
+            colRight = col + 1;
+            colLeft = world[row].length - 1;
+        } else if (col == (world[row].length - 1)) {
+            colRight = 0;
+            colLeft = col - 1;
+        } else {
+            colRight = col + 1;
+            colLeft = col - 1;
+        }
         int count;
-        if(col == 0) {
-
-        } else if(col == world.length-1){
-
+        count = world[row][colRight] + world[row][colLeft] + world[rowTop][colLeft] + world[rowTop][col] + world[rowTop][colRight] + world[rowBottom][colLeft] + world[rowBottom][col] + world[rowBottom][colRight];
+        int alive = 0;
+        if (col == 0) {
+            if (count == 3) alive = 1;
+            else alive = 0;
         }
-        if(world[row][col] == 0){
-            count = world[row][col-1] + world[row][col+1];
-            count += world [row-1][col-1] + world[row-1][col] + world[row-1][col+1];
-            count += world[row+1][col-1] + world[row+1][col] + world[row+1][col+1];
-            if(count == 3) world[row][col] = 1;
-            else world[row][col] = 0;
-        } else if(world[row][col] == 1){
-            count = world[row][col-1] + world[row][col+1];
-            count += world [row-1][col-1] + world[row-1][col] + world[row-1][col+1];
-            count += world[row+1][col-1] + world[row+1][col] + world[row+1][col+1];
-            if(count == 2 || count == 3) world[row][col] = 1;
-            else world[row][col] = 0;
+        if (col == 1) {
+            if (count == 2 || count == 3) alive = 1;
+            else alive = 0;
         }
-        return world[row][col];
+        return alive;
     }
+
+
 }
