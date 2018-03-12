@@ -45,6 +45,13 @@ public class ConwayGameOfLifeTest {
         assertTrue(java.util.Arrays.deepEquals(results, expected));
     }
 
+//    @Test
+//    public void copyAndZeroOutTest(){
+//        ConwayGameOfLife sim = new ConwayGameOfLife(5);
+//        //Given
+//
+//    }
+
     @Test
     public void isAliveTest(){
 
