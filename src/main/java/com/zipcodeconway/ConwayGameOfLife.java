@@ -39,9 +39,13 @@ public class ConwayGameOfLife {
 
     public int[][] simulate(Integer maxGenerations) {
         int generations = 0;
+
         while (generations <= maxGenerations) {
+
             this.displayWindow.display(currentGen, generations);
+
             for (int i = 0; i < currentGen.length; i++) {
+
                 for (int j = 0; j < currentGen.length; j++) {
                     nextGen[i][j] = isAlive(i, j, currentGen);
                 }
@@ -74,7 +78,17 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
+        int numberOfLivingNeighbors = numberOfNeighborsAlive(row, col, world);
 
+        if (numberOfLivingNeighbors > 2 && numberOfLivingNeighbors <= 3)
+            return 1;
+        else if (numberOfLivingNeighbors < 2 || numberOfLivingNeighbors > 3)
+            return 0;
+        else return world[row][col];
+
+    }
+
+    public int numberOfNeighborsAlive(int row, int col, int[][] world) {
 
         int north = col - 1;
         int south = col + 1;
@@ -94,14 +108,8 @@ public class ConwayGameOfLife {
             west = world[col].length - 1;
         }
 
-        int numberOfLivingNeighbors = world[row][north] + world[row][south] + world[east][col] + world[west][col]
+        return world[row][north] + world[row][south] + world[east][col] + world[west][col]
                 + world[east][north] + world[east][south] + world[west][north] + world[west][south];
-
-        if (numberOfLivingNeighbors > 2 && numberOfLivingNeighbors <= 3)
-            return 1;
-        else if (numberOfLivingNeighbors < 2 || numberOfLivingNeighbors > 3)
-            return 0;
-        else return world[row][col];
 
     }
 }
