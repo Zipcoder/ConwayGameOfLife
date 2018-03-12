@@ -2,11 +2,24 @@ package com.zipcodeconway;
 
 public class ConwayGameOfLife {
 
+    private Integer dimension;
+    private int[][] startmatrix;
+    private SimpleWindow displayWindow;
+
+
+
     public ConwayGameOfLife(Integer dimension) {
+        this.dimension = dimension;
+        this.startmatrix = createRandomStart(dimension);
+        this.displayWindow = new SimpleWindow(dimension);
 
      }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
+        this.dimension = dimension;
+        this.startmatrix = createRandomStart(dimension);
+        this.displayWindow = new SimpleWindow(dimension);
+
 
     }
 
@@ -19,10 +32,9 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        int size = dimension;
-        int[][] randomStart = new int[size][size];
-        for(int i = 0; i<size; i++){
-            for(int j = 0; j<size; j++){
+        int[][] randomStart = new int[dimension][dimension];
+        for(int i = 0; i<dimension; i++){
+            for(int j = 0; j<dimension; j++){
                 randomStart[i][j] = (int)Math.round(Math.random());
             }
         }
@@ -30,19 +42,21 @@ public class ConwayGameOfLife {
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        //gave createRandomStart same dimension as main
-        int[][] current = createRandomStart(50);
-        int[][] next = new int[50][50];
-        for(int i = 0; i<maxGenerations; i++) {
-            for (int j = 0; j < current.length; j++) {
-                for (int k = 0; k < current[i].length; k++) {
-                    current[j][k] = isAlive(j, k, current);
+        int[][] next = new int[dimension][dimension];
+        for(int i = 0; i<=maxGenerations; i++) {
+            this.displayWindow.display(startmatrix, i);
+            for (int j = 0; j < startmatrix.length; j++) {
+                for (int k = 0; k < startmatrix[j].length; k++) {
+                    next[j][k] = isAlive(j, k, startmatrix);
                 }
             }
-            copyAndZeroOut(next, current);
+            displayWindow.sleep(125);
+            copyAndZeroOut(next, startmatrix);
         }
-        return current;
+        return startmatrix;
     }
+
+
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
@@ -65,38 +79,26 @@ public class ConwayGameOfLife {
 	*/
 
     private int isAlive(int row, int col, int[][] world) {
-        int rowTop;
-        int rowBottom;
-        if (row == 0) {
-            rowTop = world.length - 1;
-            rowBottom = row - 1;
-        } else if (row == (world.length - 1)) {
-            rowTop = row + 1;
-            rowBottom = 0;
-        } else {
-            rowTop = row + 1;
-            rowBottom = row - 1;
-        }
-        int colRight;
-        int colLeft;
-        if (col == 0) {
-            colRight = col + 1;
-            colLeft = world[row].length - 1;
-        } else if (col == (world[row].length - 1)) {
-            colRight = 0;
-            colLeft = col - 1;
-        } else {
-            colRight = col + 1;
-            colLeft = col - 1;
-        }
-        int count;
-        count = world[row][colRight] + world[row][colLeft] + world[rowTop][colLeft] + world[rowTop][col] + world[rowTop][colRight] + world[rowBottom][colLeft] + world[rowBottom][col] + world[rowBottom][colRight];
+        int rowTop = row - 1;
+        int rowBottom = row + 1;
+        int colRight = col + 1;
+        int colLeft = col - 1;
+
+        if (row == 0) rowTop = world.length - 1;
+        if (row == (world.length - 1)) rowBottom = 0;
+        if (col == 0) colLeft = world[row].length - 1;
+        if (col == (world[row].length - 1)) colRight = 0;
+
+        int count = world[row][colRight] + world[row][colLeft];
+        count += world[rowTop][colLeft] + world[rowTop][col] + world[rowTop][colRight];
+        count += world[rowBottom][colLeft] + world[rowBottom][col] + world[rowBottom][colRight];
+
         int alive = 0;
-        if (col == 0) {
+        if (world[row][col] == 0) {
             if (count == 3) alive = 1;
             else alive = 0;
         }
-        if (col == 1) {
+        if (world[row][col] == 1) {
             if (count == 2 || count == 3) alive = 1;
             else alive = 0;
         }
