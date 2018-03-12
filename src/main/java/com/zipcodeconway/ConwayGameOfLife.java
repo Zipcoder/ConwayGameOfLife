@@ -72,49 +72,33 @@ public class ConwayGameOfLife {
 	*/
     private int isAlive(int row, int col, int[][] world) {
         int aliveCount = 0;
-        int up = (row == 0 ? row : row - 1);
-        int down = (row == world.length - 1 ? row : row + 1);
-        int left = (col == 0 ? col : col - 1);
-        int right = (col == world[row].length - 1 ? col : col + 1);
+        int up = (row == 0 ? world.length-1 : row - 1);
+        int down = (row == world.length - 1 ? 0 : row + 1);
+        int left = (col == 0 ? world[row].length-1 : col - 1);
+        int right = (col == world[row].length - 1 ? 0 : col + 1);
         if (world[up][col] == 1) {
-            if (up != row) {
                 aliveCount++;
-            }
         }
         if (world[up][left] == 1) {
-            if (up != row && left != col) {
                 aliveCount++;
-            }
         }
         if (world[up][right] == 1) {
-            if (up != row && right != col) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (world[row][left] == 1) {
-            if (left != col) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (world[row][right] == 1) {
-            if (right != col) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (world[down][col] == 1) {
-            if (down != row) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (world[down][left] == 1) {
-            if (down != row && left != col) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (world[down][right] == 1) {
-            if (down != row && right != col) {
-                aliveCount++;
-            }
+            aliveCount++;
         }
         if (aliveCount < 2 || aliveCount > 3) {
             return 0;
