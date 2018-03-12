@@ -4,6 +4,7 @@
     <list default="true" id="09018b99-4d1c-466e-b6bd-11e7bddb6aa5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +19,20 @@
       <file leaf-file-name="ConwayGameOfLife.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1688">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="710">
+              <caret line="67" column="57" lean-forward="true" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,6 +65,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" />
       </list>
     </option>
   </component>
@@ -389,7 +403,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520652390633</updated>
-      <workItem from="1520652393991" duration="22208000" />
+      <workItem from="1520652393991" duration="22962000" />
     </task>
     <servers />
   </component>
@@ -397,8 +411,8 @@
     <history-entry file="ConwayGameOfLifeTest - 2018.03.11 at 17h 31m 31s.xml">
       <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest1 - 2018.03.10 at 17h 09m 24s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest1" configurationId="JUnit" />
+    <history-entry file="ConwayGameOfLifeTest - 2018.03.12 at 09h 48m 23s.xml">
+      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ConwayGameOfLifeTest_runTest1 - 2018.03.10 at 17h 10m 22s.xml">
       <configuration name="ConwayGameOfLifeTest.runTest1" configurationId="JUnit" />
@@ -426,7 +440,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22208000" />
+    <option name="totallyTimeSpent" value="22962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="802" extended-state="6" />
@@ -482,14 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConwayLifeUML.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -508,10 +514,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1688">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="710">
+          <caret line="67" column="57" lean-forward="true" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

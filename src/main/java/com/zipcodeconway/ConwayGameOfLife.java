@@ -39,7 +39,7 @@ public class ConwayGameOfLife {
         int[][] randomStart = new int[dimension][dimension];
         for (int row = 0; row < randomStart.length; row++){
             for (int column = 0; column < randomStart[row].length; column++){
-                randomStart[row][column] = new Random().nextInt(2);
+                randomStart[row][column] = (int) Math.round(Math.random());
             }
         }
         return randomStart;
@@ -47,7 +47,6 @@ public class ConwayGameOfLife {
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public int[][] simulate(Integer maxGenerations) {
-
         int generation = 0;
         while (generation <= maxGenerations) {
             this.displayWindow.display(currentGeneration, maxGenerations);
@@ -67,7 +66,6 @@ public class ConwayGameOfLife {
         for (int row = 0; row < current.length; row++) {
             for (int column = 0; column < current[row].length; column++) {
                 current[row][column] = next[row][column];
-                next[row][column] = 0;
             }
         }
     }
