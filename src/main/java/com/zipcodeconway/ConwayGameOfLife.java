@@ -1,23 +1,26 @@
 package com.zipcodeconway;
 
+import java.util.Random;
+
 public class ConwayGameOfLife {
-    //private SimpleWindow displayWindow;
+    private SimpleWindow displayWindow;
     private Integer edge;
     int[][] currentGen;
     int[][] nextGen;
 
 
     public ConwayGameOfLife(Integer dimension) {
-        //this.displayWindow = new SimpleWindow(dimension);
+        this.displayWindow = new SimpleWindow(dimension);
         this.edge = dimension -1;
-        this.nextGen = new int [dimension][dimension;
+        this.nextGen = new int [dimension][dimension];
+        currentGen = createRandomStart(dimension);
      }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
-        //this.displayWindow = new SimpleWindow(dimension);
-        this.edge = dimension -1;
+        this.displayWindow = new SimpleWindow(dimension);
+        this.edge = dimension - 1;
         this.currentGen = startmatrix;
-        this.nextGen = new int [dimension][dimension;
+        this.nextGen = new int [dimension][dimension];
 
     }
 
@@ -30,18 +33,48 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[1][1];
+
+        currentGen = new int [dimension][dimension];
+
+        for(int i = 0; i < dimension; i++){
+            for (int j = 0; j < dimension; j++){
+                if (Math.random() * 100 > 50){
+                    currentGen[i][j] = 1;
+                } else {
+                    currentGen[i][j] = 0;
+                }
+            }
+        }
+
+        return currentGen;
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        return new int[1][1];
+
+        for(int i = 0; i <= maxGenerations; i++){
+            this.displayWindow.display(currentGen, i);
+            this.displayWindow.sleep(125);
+            copyAndZeroOut(nextGen, currentGen);
+        }
+
+        return currentGen;
     }
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int [][] next, int[][] current) {
+        for(int i = 0; i < current.length; i++){
+            for(int j = 0; j < current.length; j++){
+                next[i][j] = isAlive(i, j, current);
+            }
+        }
 
+        for(int i = 0; i < current.length; i++){
+            for(int j = 0; j < current.length; j++){
+                current[i][j] = next[i][j];
+                next[i][j] = 0;
+            }
+        }
     }
-
 
     // Calculate if an individual cell should be alive in the next generation.
     // Based on the game logic:
