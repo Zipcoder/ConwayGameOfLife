@@ -24,7 +24,6 @@ public class ConwayGameOfLife {
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        sim.simulate(50);
         int[][] endingWorld = sim.simulate(50);
     }
 
@@ -44,7 +43,7 @@ public class ConwayGameOfLife {
     public int[][] simulate(Integer maxGenerations) {
         int count = 0;
         while (count <= maxGenerations) {
-            this.displayWindow.display(currentGeneration, maxGenerations);
+            this.displayWindow.display(currentGeneration, count);
             for (int i = 0; i < currentGeneration.length; i++) {
                 for (int j = 0; j < currentGeneration[i].length; j++) {
                     nextGeneration[i][j] = isAlive(i, j, currentGeneration);
