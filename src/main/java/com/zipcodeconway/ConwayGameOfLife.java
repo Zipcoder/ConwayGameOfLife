@@ -25,9 +25,6 @@ public class ConwayGameOfLife {
         sim.simulate(50);
     }
 
-    // Contains the logic for the starting scenario.
-    // Which cells are alive or dead in generation 0.
-    // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
         int[][] randoStarto = new int[dimension][dimension];
         for (int i = 0; i < randoStarto.length; i++) {
@@ -54,9 +51,7 @@ public class ConwayGameOfLife {
         return currentGeneration;
     }
 
-    // copy the values of 'next' matrix to 'current' matrix,
-    // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
+    private void copyAndZeroOut(int [][] next, int[][] current) {
         for (int i = 0; i < current.length; i++){
             for (int j = 0; j < current[i].length; j++){
                 current[i][j] = next[i][j];
@@ -65,14 +60,6 @@ public class ConwayGameOfLife {
         }
     }
 
-    // Calculate if an individual cell should be alive in the next generation.
-    // Based on the game logic:
-	/*
-		Any live cell with fewer than two live neighbours dies, as if by needs caused by underpopulation.
-		Any live cell with more than three live neighbours dies, as if by overcrowding.
-		Any live cell with two or three live neighbours lives, unchanged, to the next generation.
-		Any dead cell with exactly three live neighbours cells will come to life.
-	*/
     private int isAlive(int row, int col, int[][] world) {
         int aliveCounter =0;
         int leftOne = row - 1;
