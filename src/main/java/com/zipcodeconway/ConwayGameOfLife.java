@@ -1,5 +1,7 @@
 package com.zipcodeconway;
 
+import java.util.Random;
+
 public class ConwayGameOfLife {
 
     private Integer edge;
@@ -12,6 +14,7 @@ public class ConwayGameOfLife {
         this.ourDisplayWindow= new SimpleWindow(dimension);
         this.edge=dimension-1;
         this.nextGen = new int[dimension][dimension];
+        currentGen = createRandomStart(dimension);
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startMatrix) {
@@ -31,9 +34,21 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
+//here amy
 
+        currentGen = new int[dimension][dimension];
 
-        return new int[1][1];
+        for (int i = 0; i < dimension; i++){
+            for (int j = 0; j < dimension; j++){
+                if (Math.random()* 100 > 50){
+                    currentGen[i][j] = 1;
+                } else {
+                    currentGen[i][j] = 0;
+                }
+            }
+        }
+
+        return currentGen;
     }
 
     public int[][] simulate(Integer maxGenerations) {
@@ -111,3 +126,5 @@ public class ConwayGameOfLife {
     }
 
 }
+
+//HI EVERYONE! my screenshot is in my readme.
