@@ -45,7 +45,7 @@ public class ConwayGameOfLife {
     at end of loops call copyAndZeroOut.*/
 
     public int[][] simulate(Integer maxGenerations) {
-        for (int i = 0; i < maxGenerations; i++) {
+        for (int i = 0; i <= maxGenerations; i++) {
             this.displayWindow.display(current, maxGenerations);
             for (int row = 0; row < current.length; row++) {
                 for (int col = 0; col < current[row].length; col++) {
@@ -63,6 +63,7 @@ public class ConwayGameOfLife {
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
     public void copyAndZeroOut(int[][] next, int[][] current) {
+
         //zeros all indexes of next;
         for (int i = 0; i < next.length; i++) {
             for (int j = 0; j < next[i].length; j++) {
@@ -92,16 +93,12 @@ public class ConwayGameOfLife {
     }
 
     private int getAlive(int neighborsAlive, int isAlive) {
-        if (neighborsAlive < 2) {
-            isAlive = 0;
-        } else if (neighborsAlive > 3) {
-            isAlive = 0;
-        } else if (neighborsAlive == 2 || neighborsAlive == 3) {
-            isAlive = 1;
-        } else if (isAlive == 0 && neighborsAlive == 3) {
-            isAlive = 1;
+        if(neighborsAlive == 3){
+            isAlive =1;
         }
-
+        else if (neighborsAlive > 3 ||  neighborsAlive < 2) {
+            isAlive = 0;
+        }
         return isAlive;
 
     }
@@ -112,8 +109,8 @@ public class ConwayGameOfLife {
         neighbors[0] = checkOutOfBounds(row, col - 1, world);
         neighbors[1] = checkOutOfBounds(row - 1, col - 1, world);
         neighbors[2] = checkOutOfBounds(row + 1, col - 1, world);
-        neighbors[3] = checkOutOfBounds(row - 1, col, world);
-        neighbors[4] = checkOutOfBounds(row + 1, col, world);
+        neighbors[3] = checkOutOfBounds(row - 1, col, world);//left
+        neighbors[4] = checkOutOfBounds(row + 1, col, world);//right
         neighbors[5] = checkOutOfBounds(row - 1, col + 1, world);
         neighbors[6] = checkOutOfBounds(row, col + 1, world);
         neighbors[7] = checkOutOfBounds(row + 1, col + 1, world);
