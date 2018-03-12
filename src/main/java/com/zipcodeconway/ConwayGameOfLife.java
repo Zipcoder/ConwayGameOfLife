@@ -23,7 +23,6 @@ public class ConwayGameOfLife {
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
         sim.simulate(50);
-        int[][] endingWorld = sim.simulate(50);
     }
 
     // Contains the logic for the starting scenario.
@@ -75,7 +74,40 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        return 0;
+        int aliveCounter =0;
+        int leftOne = row - 1;
+        int rightOne = row + 1;
+        int downOne = col - 1;
+        int upOne = col + 1;
+        if (leftOne == -1) {
+            leftOne = world.length - 1;
+        }
+        if (rightOne == world.length) {
+            rightOne = 0;
+        }
+        if (downOne == -1) {
+            downOne = world[row].length - 1;
+        }
+        if (upOne == world[row].length) {
+            upOne = 0;
+        }
+        if (world[leftOne][downOne] == 1)aliveCounter++;
+        if (world[leftOne][col] == 1)aliveCounter++;
+        if (world[leftOne][upOne] == 1)aliveCounter++;
+        if (world[row][downOne] == 1)aliveCounter++;
+        if (world[row][upOne] == 1)aliveCounter++;
+        if (world[rightOne][downOne] == 1)aliveCounter++;
+        if (world[rightOne][col] == 1)aliveCounter++;
+        if (world[rightOne][upOne] == 1)aliveCounter++;
+        if (aliveCounter < 2){
+            return 0;
+        } else if (aliveCounter > 3){
+            return 0;
+        } else if (aliveCounter == 3){
+            return 1;
+        } else {
+            return world[row][col];
+        }
     }
 
 }
