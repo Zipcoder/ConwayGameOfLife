@@ -61,7 +61,7 @@ public class ConwayGameOfLife {
     }
 
     private int isAlive(int row, int col, int[][] world) {
-        int aliveCounter =0;
+        int aliveCounter = 0;
         int leftOne = row - 1;
         int rightOne = row + 1;
         int downOne = col - 1;
@@ -78,14 +78,14 @@ public class ConwayGameOfLife {
         if (upOne == world[row].length) {
             upOne = 0;
         }
-        if (world[leftOne][downOne] == 1)aliveCounter++;
-        if (world[leftOne][col] == 1)aliveCounter++;
-        if (world[leftOne][upOne] == 1)aliveCounter++;
-        if (world[row][downOne] == 1)aliveCounter++;
-        if (world[row][upOne] == 1)aliveCounter++;
-        if (world[rightOne][downOne] == 1)aliveCounter++;
-        if (world[rightOne][col] == 1)aliveCounter++;
-        if (world[rightOne][upOne] == 1)aliveCounter++;
+        if (world[leftOne][downOne] == 1) {aliveCounter++;}
+        if (world[leftOne][col] == 1) {aliveCounter++;}
+        if (world[leftOne][upOne] == 1) {aliveCounter++;}
+        if (world[row][downOne] == 1) {aliveCounter++;}
+        if (world[row][upOne] == 1) {aliveCounter++;}
+        if (world[rightOne][downOne] == 1) {aliveCounter++;}
+        if (world[rightOne][col] == 1) {aliveCounter++;}
+        if (world[rightOne][upOne] == 1) {aliveCounter++;}
         if (aliveCounter < 2){
             return 0;
         } else if (aliveCounter > 3){
