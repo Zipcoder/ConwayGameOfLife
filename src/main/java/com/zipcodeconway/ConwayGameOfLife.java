@@ -10,8 +10,8 @@ public class ConwayGameOfLife {
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
-        currentGen = createRandomStart(dimension);
-        nextGen = new int[dimension][dimension];
+        this.currentGen = createRandomStart(dimension);
+        this.nextGen = new int[dimension][dimension];
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
@@ -52,7 +52,7 @@ public class ConwayGameOfLife {
                 }
             }
             copyAndZeroOut(nextGen, currentGen);
-            displayWindow.sleep(125);
+            displayWindow.sleep(500);
             count++;
         }
         return currentGen;
@@ -78,28 +78,7 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        int north = col - 1;
-        int south = col + 1;
-        int west = row - 1;
-        int east = row + 1;
-
-        if (north == -1) {
-            north = world[row].length - 1;
-        }
-        if (south == world[row].length) {
-            south = 0;
-        }
-        if (west == -1) {
-            west = world.length - 1;
-        }
-        if (east == world.length) {
-            east = 0;
-        }
-
-        int numOfLiveNeighbors = world[row][north] + world[east][north] + world[west][north] +
-                world[row][south] + world[east][south] + world[west][south]
-                + world[east][col] + world[west][col];
-
+        int numOfLiveNeighbors = numberOfLivingNeighbors(row,col,world);
         if (numOfLiveNeighbors < 2 || numOfLiveNeighbors > 3) {
             return 0;
         } else if (numOfLiveNeighbors == 3)
@@ -108,4 +87,25 @@ public class ConwayGameOfLife {
             return world[row][col];
         }
     }
+
+    public int numberOfLivingNeighbors(int row, int col, int[][] world) {
+        int north = col - 1;
+        int south = col + 1;
+        int west = row - 1;
+        int east = row + 1;
+
+        if (north == -1)
+            north = world[row].length - 1;
+        if (south == world[row].length)
+            south = 0;
+        if (west == -1)
+            west = world.length - 1;
+        if (east == world.length)
+            east = 0;
+
+        return world[row][north] + world[east][north] + world[west][north] +
+                world[row][south] + world[east][south] + world[west][south]
+                + world[east][col] + world[west][col];
+    }
+
 }
