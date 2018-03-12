@@ -1,6 +1,7 @@
 package com.zipcodeconway;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class ConwayGameOfLife {
 
@@ -21,8 +22,15 @@ public class ConwayGameOfLife {
     }
 
     public static void main(String[] args) {
-        ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        sim.simulate(50);
+        Scanner input = new Scanner(System.in);
+        System.out.println("How many generations?");
+        int generations = input.nextInt();
+        System.out.println("How many pixels big will the simulation be?");
+        int simDimentions = input.nextInt();
+        System.out.println("Running simulation...");
+        ConwayGameOfLife sim = new ConwayGameOfLife(simDimentions);
+        sim.simulate(generations);
+        System.out.println("Simulation complete");
     }
 
     private int[][] createRandomStart(Integer dimension) {
