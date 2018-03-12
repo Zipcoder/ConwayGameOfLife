@@ -29,12 +29,12 @@ public class ConwayGameOfLife {
     }
 
     public int[][] simulate(Integer maxGenerations) {
-
-        int count = 0;
+        int generations = 0;
         //count has to be less than OR equal to maxGen because it has to be equal to the number of times it has to run
-        while (count <= maxGenerations) {
-            displayWindow.display(currentGen, count);
-            //update nextGen from currentGen
+        while (generations <= maxGenerations) {
+            //new display
+            displayWindow.display(currentGen, generations);
+            //update the currentGeneration to nextGen
             for (int row = 0; row < currentGen.length; row++) {
                 for (int column = 0; column < currentGen[row].length; column++) {
                     nextGen[row][column] = isAlive(row, column, currentGen);
@@ -43,7 +43,7 @@ public class ConwayGameOfLife {
 
             copyAndZeroOut(nextGen, currentGen);
             displayWindow.sleep(125);
-            count++;
+            generations++;
         }
         return currentGen;
     }
@@ -126,16 +126,13 @@ public class ConwayGameOfLife {
 	    */
 
         //underpopulation
-        if(count < 2) {
-            return 0;
-            //overcrowding
-        }else if (count > 3 ) {
+        if(count < 2 || count > 3 ) {
             return 0;
             //3 neighbors brings it to life so = 1.
         }else if(count == 3) {
             return 1;
         }else
-            //return the cell as it is JUST incase...... instead of returning 1.
+            //return the cell UNCHANGED as it is JUST incase...... instead of returning 1.
             return world[row][col];
 
     }
