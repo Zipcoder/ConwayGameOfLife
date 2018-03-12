@@ -11,8 +11,8 @@ public class ConwayGameOfLife {
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
         currentGen = createRandomStart(dimension);
-       nextGen = new int[dimension][dimension];
-     }
+        nextGen = new int[dimension][dimension];
+    }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
@@ -30,12 +30,14 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        for (int i = 0; i < dimension; i++) {
-            for (int j = 0; j < dimension; i++) {
-                currentGen[i][j] = (int) Math.round(Math.random());
+        int[][] randomStart = new int[dimension][dimension];
+
+        for (int i = 0; i < randomStart.length; i++) {
+            for (int j = 0; j < randomStart.length; j++) {
+                randomStart[i][j] = (int) Math.round(Math.random());
             }
         }
-        return currentGen;
+        return randomStart;
     }
 
     public int[][] simulate(Integer maxGenerations) {
@@ -58,9 +60,9 @@ public class ConwayGameOfLife {
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
-        for(int i = 0; i < next.length; i++) {
-            for(int j = 0; j < next.length; j++) {
+    public void copyAndZeroOut(int[][] next, int[][] current) {
+        for (int i = 0; i < next.length; i++) {
+            for (int j = 0; j < next.length; j++) {
                 current[i][j] = next[i][j];
                 next[i][j] = 0;
             }
@@ -76,37 +78,34 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        int north = col -1;
-        int south = col +1;
-        int west = row -1;
-        int east = row +1;
+        int north = col - 1;
+        int south = col + 1;
+        int west = row - 1;
+        int east = row + 1;
 
-        if(north < 0) {
-            north = world[row].length -1;
+        if (north == -1) {
+            north = world[row].length - 1;
         }
         if (south == world[row].length) {
             south = 0;
         }
-        if (west < 0) {
-            west = world[col].length -1;
+        if (west == -1) {
+            west = world.length - 1;
         }
-        if (east == world[col].length) {
+        if (east == world.length) {
             east = 0;
         }
 
         int numOfLiveNeighbors = world[row][north] + world[east][north] + world[west][north] +
                 world[row][south] + world[east][south] + world[west][south]
-                + world[row][west] + world[row][east];
+                + world[east][col] + world[west][col];
 
-        if (numOfLiveNeighbors < 2 || numOfLiveNeighbors > 3)
+        if (numOfLiveNeighbors < 2 || numOfLiveNeighbors > 3) {
             return 0;
-
-        if (world[row][col] == 0 && numOfLiveNeighbors == 3)
+        } else if (numOfLiveNeighbors == 3)
             return 1;
-
-        // if this cell we are looking at is alive
-        // and my live neighbors = 2 or three
-        if (world[row][col] == 1 && ((numOfLiveNeighbors == 2) || (numOfLiveNeighbors == 3)));
-            return 1;
+        else {
+            return world[row][col];
+        }
     }
 }
