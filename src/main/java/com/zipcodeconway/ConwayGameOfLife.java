@@ -1,17 +1,24 @@
 package com.zipcodeconway;
 
+import jdk.nashorn.internal.ir.visitor.SimpleNodeVisitor;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class ConwayGameOfLife {
 
+    private SimpleWindow simpleWindow;
+
     private Integer dimension;
     private int[][] startMatrix;
+    private int[][] nextGeneration;
     private int[][] nextArrayAfter;
     private int[][] currentArrayAfter;
 
     public ConwayGameOfLife(Integer dimension) {
-        this.dimension = dimension;
+        this.simpleWindow = new SimpleWindow(dimension);
+        this.startMatrix = createRandomStart(dimension);
+        this.nextGeneration = new int[dimension][dimension];
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startMatrix) {
@@ -83,9 +90,9 @@ public class ConwayGameOfLife {
     public String rowsToString(int[][] arrayToPrint) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arrayToPrint.length; i++) {
-            sb.append(arrayToPrint[i] + "\n");
+            sb.append(Arrays.toString(arrayToPrint[i]) + "\n");
         }
-        sb.deleteCharAt(arrayToPrint.length - 1);
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 
@@ -93,37 +100,6 @@ public class ConwayGameOfLife {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
         int[][] endingWorld = sim.simulate(50);
 
-//        int[][] testArray3 = sim.createRandomStart(5);
-//
-//        for (int i = 0; i < testArray3.length; i++) {
-//            System.out.println("row " + i + ": " + Arrays.toString(testArray3[i]));
-//        }
-
-        int[][] nextArray = {
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 1, 1, 1, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0} };
-
-        int[][] currentArray = {
-                {0, 0, 0, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0} };
-
-        System.out.println("nextArrayBefore:");
-        for (int i = 0; i < nextArray.length; i++) {
-            System.out.println(Arrays.toString(nextArray[i]));
-        }
-        System.out.println();
-        System.out.println("currentArrayBefore");
-        for (int i = 0; i < currentArray.length; i++) {
-            System.out.println(Arrays.toString(currentArray[i]));
-        }
-
-        sim.copyAndZeroOut(nextArray, currentArray);
     }
 
 }
