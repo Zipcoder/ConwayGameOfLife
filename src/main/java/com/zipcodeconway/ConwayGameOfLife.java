@@ -36,6 +36,7 @@ public class ConwayGameOfLife {
             displayWindow.display(currentGen, generations);
             //update the currentGeneration to nextGen
             for (int row = 0; row < currentGen.length; row++) {
+                //do not need [row] because it is a cube but it would require that if it wasnt one.
                 for (int column = 0; column < currentGen[row].length; column++) {
                     nextGen[row][column] = isAlive(row, column, currentGen);
                 }
@@ -44,6 +45,7 @@ public class ConwayGameOfLife {
             copyAndZeroOut(nextGen, currentGen);
             displayWindow.sleep(125);
             generations++;
+
         }
         return currentGen;
     }
@@ -52,6 +54,7 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
+        //have to create a random array!!! define with dimension parameter!
         int[][] newRandomArray = new int[dimension][dimension];
         for (int row = 0; row < newRandomArray.length ; row++) {
             for (int column = 0; column < newRandomArray[row].length; column++) {
