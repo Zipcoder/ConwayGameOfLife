@@ -77,7 +77,7 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
-        int aliveNieghbors =0;
+        int aliveNeighbors =0;
         int i2 = row - 1;
         int i3 = row + 1;
         int j2 = col - 1;
@@ -91,20 +91,20 @@ public class ConwayGameOfLife {
         if (j3 == world[row].length)
             j3 = 0;
 
-        if (world[i2][j2] == 1)aliveNieghbors++;
-        if (world[i2][col] == 1)aliveNieghbors++;
-        if (world[i2][j3] == 1)aliveNieghbors++;
-        if (world[row][j2] == 1)aliveNieghbors++;
-        if (world[row][j3] == 1)aliveNieghbors++;
-        if (world[i3][j2] == 1)aliveNieghbors++;
-        if (world[i3][col] == 1)aliveNieghbors++;
-        if (world[i3][j3] == 1)aliveNieghbors++;
+        if (world[i2][j2] == 1)aliveNeighbors++;
+        if (world[i2][col] == 1)aliveNeighbors++;
+        if (world[i2][j3] == 1)aliveNeighbors++;
+        if (world[row][j2] == 1)aliveNeighbors++;
+        if (world[row][j3] == 1)aliveNeighbors++;
+        if (world[i3][j2] == 1)aliveNeighbors++;
+        if (world[i3][col] == 1)aliveNeighbors++;
+        if (world[i3][j3] == 1)aliveNeighbors++;
 
-        if (aliveNieghbors < 2){
+        if (aliveNeighbors < 2){
             return 0;
-        } else if (aliveNieghbors > 3){
+        } else if (aliveNeighbors > 3){
             return 0;
-        } else if (aliveNieghbors == 3){
+        } else if (aliveNeighbors == 3){
             return 1;
         } else {
             return world[row][col];
