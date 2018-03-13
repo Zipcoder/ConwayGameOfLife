@@ -21,7 +21,7 @@ public class ConwayGameOfLifeTest {
     }
     @Test
     public void testIsAlive2(){
-        ConwayGameOfLife x=new ConwayGameOfLife(5);
+        ConwayGameOfLife test=new ConwayGameOfLife(5);
         int[][] start = {
                 {0, 0, 0, 0, 0},
                 {0, 0, 1, 0, 0},
@@ -29,12 +29,12 @@ public class ConwayGameOfLifeTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0}};
         int expected =1;
-        int actual = x.isAlive(2,2,start);
+        int actual = test.isAlive(2,2,start);
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void testNumberOfLiveGetNeignbours(){
-        ConwayGameOfLife x=new ConwayGameOfLife(5);
+        ConwayGameOfLife test=new ConwayGameOfLife(5);
         int[][] start = {
                 {0, 0, 0, 0, 0},
                 {0, 0, 1, 0, 0},
@@ -42,8 +42,8 @@ public class ConwayGameOfLifeTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0}};
         int expected =2;
-        //int actual = x.getneighbours(x.getNeighbours(3,3,start));
-        //Assert.assertEquals(expected,actual);
+        int actual = test.getNeighboursALive(3,3,start);
+        Assert.assertEquals(expected,actual);
     }
     @Test
     public void testGetNeignbours(){

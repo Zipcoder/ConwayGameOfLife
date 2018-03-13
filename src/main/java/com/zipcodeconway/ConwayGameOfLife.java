@@ -85,7 +85,7 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     public int isAlive(int row, int col, int[][] world) {
-        int neighbours = getNeighbours(row, col, world);
+        int neighbours = getNeighboursALive(row, col, world);
 
         //test
         if (neighbours == 2)
@@ -96,7 +96,7 @@ public class ConwayGameOfLife {
             return 0;
     }
 
-    public int getNeighbours(int row, int col, int[][] input) {
+    public int getNeighboursALive(int row, int col, int[][] input) {
         int totalNeighbors = 0;
         int index = 0;
         for (int i = -1; i <= 1; i++) {
