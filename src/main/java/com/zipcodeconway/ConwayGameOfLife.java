@@ -5,21 +5,20 @@ import java.util.Arrays;
 public class ConwayGameOfLife {
     private Integer dimension;
     private int[][] current;
-    //private int[][] next;
-    public int neighbourRow;
-    public int neighbourCol;
+    private int[][] next;
     private SimpleWindow displayWindow;
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
         this.current = createRandomStart(dimension);
-        //this.next = new int[dimension][dimension];
+        this.next= new int[dimension][dimension];
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
         this.current = startmatrix;
         this.dimension = dimension;
+        this.next= new int[dimension][dimension];
         //this.next = new int[dimension][dimension];
     }
 
@@ -35,7 +34,7 @@ public class ConwayGameOfLife {
         int[][] start = new int[dimension][dimension];
         for (int row = 0; row < dimension; row++) {
             for (int col = 0; col < dimension; col++) {
-                int val = (int) Math.round(Math.random());
+                int val = (int) Math.round(Math.random()*0.75);
                 start[row][col] = val;
             }
         }
@@ -44,15 +43,14 @@ public class ConwayGameOfLife {
 
     public int[][] simulate(Integer maxGenerations) {
         int[][] currentWorld = current;
-        int[][] nextWorld = new int[dimension][dimension];
+        int[][] nextWorld = next;
 
         for (int i = 0; i <= maxGenerations; i++) {
             this.displayWindow.display(currentWorld, i);
 
-
             nextWorld = runSim(currentWorld, nextWorld); // tested!!!
-
             currentWorld = copyAndZeroOut(nextWorld, currentWorld);
+
         }
         this.displayWindow.sleep(125);
         //displayWindow.sleep(10000);
@@ -96,19 +94,6 @@ public class ConwayGameOfLife {
             return 1;
         else
             return 0;
-        //
-
-//        if (world[row][col] == 1 && (neighbours < 2)) {
-//            return 0;
-//        } else if (world[row][col] == 1 && (neighbours > 3)) {
-//             return 0;
-//        } else if (world[row][col] == 1 && (neighbours == 3) ||
-//                (neighbours == 2)) {
-//            return 1;
-//        } else if (world[row][col] == 0 && (neighbours == 3)) {
-//            return 1;
-//        }
-
     }
 
     public int getNeighbours(int row, int col, int[][] input) {
