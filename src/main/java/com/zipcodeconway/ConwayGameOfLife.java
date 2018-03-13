@@ -39,14 +39,14 @@ public class ConwayGameOfLife {
 
     public int[][] simulate(Integer maxGenerations) {
         for (int i = 0; i <= maxGenerations; i++) {
-            this.displayWindow.display(currentGen, maxGenerations);
+            this.displayWindow.display(currentGen, i);
             for (int j = 0; j < currentGen.length; j++) {
                 for (int k = 0; k < currentGen[j].length; k++) {
                     nextGen[j][k] = isAlive(j, k, currentGen);
                 }
             }
             copyAndZeroOut(nextGen, currentGen);
-            this.displayWindow.sleep(125);
+            this.displayWindow.sleep(1000);
         }
 
         return currentGen;
@@ -72,10 +72,10 @@ public class ConwayGameOfLife {
 		Any live cell with two or three live neighbours lives, unchanged, to the next generation.
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
-    private int isAlive(int row, int col, int[][] world) {
+    public int isAlive(int row, int col, int[][] world) {
         int cellValue = world[row][col];
         int countOfAlive = 0;
-        int[] neighborsValues = getNeighborsArray(row, col, world);
+        Integer[] neighborsValues = getNeighborsArray(row, col, world);
         for (int i = 0; i < neighborsValues.length; i++) {
             if (neighborsValues[i] == 1) {
                 countOfAlive++;
@@ -100,16 +100,16 @@ public class ConwayGameOfLife {
     3. other
      */
 
-    public int[] getNeighborsArray(int row, int col, int[][] world) {
-        int[] neighborArray = new int[8];
-        neighborArray[0] = getNeighborValue(row, col - 1, world);
-        neighborArray[1] = getNeighborValue(row + 1, col - 1, world);
-        neighborArray[2] = getNeighborValue(row - 1, col, world);
-        neighborArray[3] = getNeighborValue(row + 1, col, world);
-        neighborArray[4] = getNeighborValue(row - 1, col + 1, world);
-        neighborArray[5] = getNeighborValue(row, col + 1, world);
-        neighborArray[6] = getNeighborValue(row + 1, col + 1, world);
-        neighborArray[7] = getNeighborValue(row - 1, col - 1, world);
+    public Integer[] getNeighborsArray(int row, int col, int[][] world) {
+        Integer[] neighborArray = new Integer[8];
+        neighborArray[0] = getNeighborValue(row, col - 1, world); //west
+        neighborArray[1] = getNeighborValue(row + 1, col - 1, world); //SW
+        neighborArray[2] = getNeighborValue(row - 1, col, world); //north
+        neighborArray[3] = getNeighborValue(row + 1, col, world); //south
+        neighborArray[4] = getNeighborValue(row - 1, col + 1, world); //NE
+        neighborArray[5] = getNeighborValue(row, col + 1, world); //east
+        neighborArray[6] = getNeighborValue(row + 1, col + 1, world); //SE
+        neighborArray[7] = getNeighborValue(row - 1, col - 1, world); //NW
 
         return neighborArray;
     }
@@ -119,8 +119,8 @@ public class ConwayGameOfLife {
      */
 
     public int getNeighborValue(int row, int col, int[][] world) {
-        row = checkRowBoundary(row, col, world.length - 1);
-        col = checkColBoundary(row, col, world.length - 1);
+        row = checkRowBoundary(row, world.length - 1);
+        col = checkColBoundary(col, world.length - 1);
         return world[row][col];
     }
     /*
@@ -128,16 +128,15 @@ public class ConwayGameOfLife {
     when calling [row][col] we are getting a single int value --> either a 0 or 1
      */
 
-    public int checkRowBoundary(int row, int col, int length) {
-        int rowBounds = 0;
+    public int checkRowBoundary(int row, int length) {
         if (row < 0) {
-            rowBounds = length;
+            row = length;
         }
         else if(row > length) {
-            rowBounds = 0;
+            row = 0;
         }
 
-        return rowBounds;
+        return row;
     }
     /*
     these two methods, they're checking the boundaries for the columns & rows of our value's neighbors
@@ -145,16 +144,15 @@ public class ConwayGameOfLife {
     --> the reflective position in the [][]
      */
 
-    public int checkColBoundary(int row, int col, int length) {
-        int colBounds = 0;
+    public int checkColBoundary(int col, int length) {
         if (col > length) {
-            colBounds = 0;
+            col = 0;
         }
         else if (col < 0) {
-            colBounds = length;
+            col = length;
         }
 
-        return colBounds;
+        return col;
     }
 
 }
