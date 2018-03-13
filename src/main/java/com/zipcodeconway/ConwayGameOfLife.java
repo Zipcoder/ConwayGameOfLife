@@ -1,6 +1,5 @@
 package com.zipcodeconway;
 
-import java.util.Random;
 
 public class ConwayGameOfLife {
 
@@ -29,16 +28,31 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        final Random random = new Random();
+        //creating random world[][]
+        int[][] newWorld = new int[dimension][dimension];
+        for(int row = 0; row < newWorld.length; row++){
+            for(int col = 0; col < newWorld[row].length; col++){
+                newWorld[row][col] = (int)(Math.random() * 2);
+            }
+        }
 
-        return new int[1][1];
+        return newWorld;
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        for(int i = 0; i <= maxGenerations; i++){
-            this.displayWindow.display(currentGen, i);
-            this.displayWindow.sleep(125);
+        //updating the next from the current generation
+        //setting alive neighbors from isAlive method into next generation
+        int counter = 0;
+        while(counter <= maxGenerations){
+            displayWindow.display(currentGen, counter);
+            for(int row = 0; row < currentGen.length; row++){
+                for(int col = 0; col < currentGen[row].length; col++){
+                    next[row][col] = isAlive(row, col, currentGen);
+                }
+            }
             copyAndZeroOut(next, currentGen);
+            displayWindow.sleep(125);
+            counter++;
         }
         return currentGen;
     }
