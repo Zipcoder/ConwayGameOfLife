@@ -7,7 +7,7 @@ public class ConwayGameOfLife {
 
     public ConwayGameOfLife(Integer dimension) { //this board will start with random dimensions
         nextGen = new int[dimension][dimension];
-        currentGen = createRandomStart(dimension);
+        this.currentGen = createRandomStart(dimension);
         this.displayWindow = new SimpleWindow(dimension);
     }
 
@@ -26,10 +26,11 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
+        int[][] currentGen = new int[dimension][dimension];
         for (int row = 0; row < dimension; row++) {
-            for (int column = 0; column < dimension; column++) { //dimensions have the same length both ways
-                currentGen[row][column] = (int) (Math.random() * 2); //creates random starting board
-            }
+            //dimensions have the same length both ways
+            for (int column = 0; column < dimension; column++)
+                currentGen[row][column] = (int)(Math.random() * 2); //creates random starting board
         }
         return currentGen;
     }
