@@ -1,19 +1,26 @@
 package com.zipcodeconway;
 
+import java.util.Arrays;
+
 public class ConwayGameOfLife {
     private Integer dimension;
-    private int[][] generation;
+    private int[][] current;
+    //private int[][] next;
     public int neighbourRow;
     public int neighbourCol;
     private SimpleWindow displayWindow;
 
     public ConwayGameOfLife(Integer dimension) {
         this.displayWindow = new SimpleWindow(dimension);
-     }
+        this.current = createRandomStart(dimension);
+        //this.next = new int[dimension][dimension];
+    }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.displayWindow = new SimpleWindow(dimension);
-        this.generation = startmatrix;
+        this.current = startmatrix;
+        this.dimension = dimension;
+        //this.next = new int[dimension][dimension];
     }
 
     public static void main(String[] args) {
@@ -25,24 +32,50 @@ public class ConwayGameOfLife {
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        int[][]start = new int[dimension][dimension];
-        for(int row =0;row<dimension;row++){
-            for(int col=0;col<dimension;col++){
+        int[][] start = new int[dimension][dimension];
+        for (int row = 0; row < dimension; row++) {
+            for (int col = 0; col < dimension; col++) {
                 int val = (int) Math.round(Math.random());
-                start[row][col]=val;
+                start[row][col] = val;
             }
         }
-
         return start;
     }
 
     public int[][] simulate(Integer maxGenerations) {
-        return new int[1][1];
+        int[][] currentWorld = current;
+        int[][] nextWorld = new int[dimension][dimension];
+
+        for (int i = 0; i <= maxGenerations; i++) {
+            this.displayWindow.display(currentWorld, i);
+
+
+            nextWorld = runSim(currentWorld, nextWorld); // tested!!!
+
+            currentWorld = copyAndZeroOut(nextWorld, currentWorld);
+        }
+        this.displayWindow.sleep(125);
+        //displayWindow.sleep(10000);
+        return currentWorld;
+    }
+
+    private int[][] runSim(int[][] currentWorld, int[][] nextWorld) {
+        for (int row = 0; row < currentWorld.length; row++) {
+            for (int col = 0; col < currentWorld[row].length; col++) {
+                nextWorld[row][col] = isAlive(row, col, currentWorld);
+            }
+        }
+        return nextWorld;
     }
 
     // copy the values of 'next' matrix to 'current' matrix,
     // and then zero out the contents of 'next' matrix
-    public void copyAndZeroOut(int [][] next, int[][] current) {
+    public int[][] copyAndZeroOut(int[][] nextWorld, int[][] currentWorld) {
+        for (int i = 0; i < currentWorld.length; i++) {
+            System.arraycopy(nextWorld[i], 0, currentWorld[i], 0, currentWorld.length);
+            Arrays.fill(nextWorld[i], 0);
+        }
+        return currentWorld;
     }
 
     // Calculate if an individual cell should be alive in the next generation.
@@ -53,52 +86,68 @@ public class ConwayGameOfLife {
 		Any live cell with two or three live neighbours lives, unchanged, to the next generation.
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
-    private int isAlive(int row, int col, int[][] world) {
-        int[]neighbours = getNeignbours(row,col,world);
-        if(world[row][col]==1 && getNumberOfLiveNeighbours(neighbours)<2){ world[row][col]=0; }
-        else if(world[row][col]==1 && getNumberOfLiveNeighbours(neighbours)>3){world[row][col]=0; }
-        else if(world[row][col]==1 && (getNumberOfLiveNeighbours(neighbours)==3)||(getNumberOfLiveNeighbours(neighbours)==2)){world[row][col]=1; }
-        else if (world[row][col]==0&& getNumberOfLiveNeighbours(neighbours)==3){world[row][col]=1}
+    public int isAlive(int row, int col, int[][] world) {
+        int neighbours = getNeighbours(row, col, world);
 
+        //test
+        if (neighbours == 2)
+            return world[row][col];
+        else if (neighbours == 3)
+            return 1;
+        else
+            return 0;
+        //
 
-        return world[row][col];
+//        if (world[row][col] == 1 && (neighbours < 2)) {
+//            return 0;
+//        } else if (world[row][col] == 1 && (neighbours > 3)) {
+//             return 0;
+//        } else if (world[row][col] == 1 && (neighbours == 3) ||
+//                (neighbours == 2)) {
+//            return 1;
+//        } else if (world[row][col] == 0 && (neighbours == 3)) {
+//            return 1;
+//        }
+
     }
-    public int[] getNeignbours(int row, int col,int[][]input){
-        int[] neignbours = new int[8];
-        for(int i=0;i<8;i++){
-            checkBoundries(row,col,input);
-            neignbours[i]=input[neighbourRow][neighbourCol];
+
+    public int getNeighbours(int row, int col, int[][] input) {
+        int totalNeighbors = 0;
+        int index = 0;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                int neighbourRow = getNeighbourRow(i, row, input);
+                int neighbourCol = getNeighbourCol(j, col, input);
+                if (!(getNeighbourRow(i, row, input) == row && getNeighbourCol(j, col, input) == col)) {
+                    totalNeighbors += input[neighbourRow][neighbourCol];
+                    index++;
+                }
+            }
         }
-        return neignbours;
+        return totalNeighbors;
     }
-    public int getNumberOfLiveNeighbours(int[]neighbours){
-        int count=0;
-        for(int i=0;i<neighbours.length;i++){
-            count+=neighbours[i];
-        }
-        return count;
-    }
-    public void checkBoundries(int row, int col,int[][]input) {
-        if (row - 1 < 0) {
-            neighbourRow = input.length;
-        } else {
-            neighbourRow = row - 1;
-        }
-        if (row + 1 > input.length) {
+
+    public int getNeighbourRow(int x, int row, int[][] input) {
+        int neighbourRow;
+        if (row + x < 0) {
+            neighbourRow = input.length - 1;
+        } else if (row + x > input.length - 1) {
             neighbourRow = 0;
         } else {
-            neighbourRow = row + 1;
+            neighbourRow = row + x;
         }
-        if (col - 1 < 0) {
-            neighbourCol = input[0].length;
-        } else {
-            neighbourCol = col - 1;
-        }
-        if (col + 1 > input[0].length) {
-            neighbourCol = 0;
-        } else {
-            neighbourCol = col + 1;
-        }
+        return neighbourRow;
     }
 
+    public int getNeighbourCol(int x, int col, int[][] input) {
+        int neighbourCol;
+        if (col + x < 0) {
+            neighbourCol = input[0].length - 1;
+        } else if (col + x > input[0].length - 1) {
+            neighbourCol = 0;
+        } else {
+            neighbourCol = col + x;
+        }
+        return neighbourCol;
+    }
 }
