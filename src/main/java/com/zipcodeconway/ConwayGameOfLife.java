@@ -22,7 +22,7 @@ public class ConwayGameOfLife {
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        int[][] endingWorld = sim.simulate(50);
+        int[][] endingWorld = sim.simulate(500);
     }
 
     // Contains the logic for the starting scenario.
@@ -41,11 +41,9 @@ public class ConwayGameOfLife {
         int generations = 0;
 
         while (generations <= maxGenerations) {
-
             this.displayWindow.display(currentGen, generations);
 
             for (int i = 0; i < currentGen.length; i++) {
-
                 for (int j = 0; j < currentGen.length; j++) {
                     nextGen[i][j] = isAlive(i, j, currentGen);
                 }
@@ -78,6 +76,7 @@ public class ConwayGameOfLife {
 		Any dead cell with exactly three live neighbours cells will come to life.
 	*/
     private int isAlive(int row, int col, int[][] world) {
+
         int numberOfLivingNeighbors = numberOfNeighborsAlive(row, col, world);
 
         if (numberOfLivingNeighbors > 2 && numberOfLivingNeighbors <= 3)
