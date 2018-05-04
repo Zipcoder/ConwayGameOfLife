@@ -24,8 +24,8 @@ public class ConwayGameOfLife {
     }
 
     public static void main(String[] args) {
-        ConwayGameOfLife sim = new ConwayGameOfLife(50);
-        int[][] endingWorld = sim.simulate(50);
+        ConwayGameOfLife sim = new ConwayGameOfLife(100);
+        int[][] endingWorld = sim.simulate(150);
     }
 
     // Contains the logic for the starting scenario.
@@ -50,7 +50,7 @@ public class ConwayGameOfLife {
                     next[j][k] = isAlive(j, k, startmatrix);
                 }
             }
-            displayWindow.sleep(125);
+            displayWindow.sleep(75);
             copyAndZeroOut(next, startmatrix);
         }
         return startmatrix;
