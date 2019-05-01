@@ -9,7 +9,7 @@
         <module name="Game-Of-Life-Java" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="Game-Of-Life-Java" target="1.5" />
     </bytecodeTargetLevel>
   </component>

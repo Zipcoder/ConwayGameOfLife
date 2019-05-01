@@ -43,7 +43,7 @@ public class SimpleWindow {
                     g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 }
                 if (array[i][j] == 1) {
-                    g.setColor(Color.BLACK);
+                    g.setColor(Color.BLUE);
                     g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 }
             }
