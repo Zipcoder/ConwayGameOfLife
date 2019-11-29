@@ -7,9 +7,10 @@ public class SimpleWindow {
     static JPanel panel;
     static JFrame frame;
     private Integer dim = 0;
+    private Integer boxDim = 15;
 
     public SimpleWindow(Integer dimension) {
-        this.dim = dimension * 10;
+        this.dim = dimension * this.boxDim;
         panel = new JPanel();
         Dimension dim = new Dimension(this.dim, this.dim);
         panel.setPreferredSize(dim);
@@ -34,18 +35,15 @@ public class SimpleWindow {
     public void display(int[][] array, Integer n) {
         frame.setTitle(String.format("Generation: %6d", n));
         Graphics g = panel.getGraphics();
-        int BOX_DIM = 10;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
-                g.drawRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
+                g.drawRect(i * this.boxDim, j * this.boxDim, this.boxDim, this.boxDim);
                 if (array[i][j] == 0) {
                     g.setColor(Color.WHITE);
-                    g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
-                }
-                if (array[i][j] == 1) {
+                } else if (array[i][j] == 1) {
                     g.setColor(Color.BLACK);
-                    g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 }
+                g.fillRect(i * this.boxDim-1, j * this.boxDim, this.boxDim+1, this.boxDim);
             }
         }
 
