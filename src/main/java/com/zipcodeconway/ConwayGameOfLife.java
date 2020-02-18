@@ -1,11 +1,30 @@
+/*
+James Wilkinson's implimentation of Conway's Game of Life
+2020 / 02 / 18
+*/
+
 package com.zipcodeconway;
 
-public class ConwayGameOfLife {
+public class ConwayGameOfLife
+{
+    private Integer[][] world;
 
-    public ConwayGameOfLife(Integer dimension) {
+    public ConwayGameOfLife(Integer dimension)
+    {
+        world = new Integer[dimension][dimension];
      }
 
-    public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
+    public ConwayGameOfLife(Integer dimension, int[][] startmatrix)
+    {
+        world = new Integer[dimension][dimension];
+
+        for(Integer row = 0; row < dimension; row++)
+        {
+            for(Integer column = 0; column < dimension; column++)
+            {
+                world[row][column] = startmatrix[row][column];
+            }
+        }
     }
 
     public static void main(String[] args) {
