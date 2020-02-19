@@ -75,7 +75,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConwayGameOfLife">
+  <component name="RunManager" selected="JUnit.ConwayGameOfLifeTest.runTest2">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -118,7 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConwayGameOfLifeTest.runTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConwayGameOfLifeTest.isAliveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Game-Of-Life-Java" />
       <extension name="coverage">
         <pattern>
@@ -128,7 +128,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zipcodeconway" />
       <option name="MAIN_CLASS_NAME" value="com.zipcodeconway.ConwayGameOfLifeTest" />
-      <option name="METHOD_NAME" value="runTest" />
+      <option name="METHOD_NAME" value="isAliveTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -219,19 +219,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ConwayGameOfLife" />
-      <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest" />
       <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest2" />
       <item itemvalue="JUnit.ConwayGameOfLifeTest" />
-      <item itemvalue="Maven.ConwayLife" />
       <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest1" />
+      <item itemvalue="JUnit.ConwayGameOfLifeTest.isAliveTest" />
+      <item itemvalue="Maven.ConwayLife" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConwayGameOfLife" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest2" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest1" />
+        <item itemvalue="Application.ConwayGameOfLife" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest" />
-        <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest" />
+        <item itemvalue="JUnit.ConwayGameOfLifeTest.isAliveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -248,46 +248,83 @@
       <workItem from="1519668902904" duration="14517000" />
       <workItem from="1582040725890" duration="1666000" />
       <workItem from="1582043345163" duration="1994000" />
+      <workItem from="1582046016773" duration="7368000" />
+      <workItem from="1582063465761" duration="840000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 15h 45m 01s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 15h 59m 00s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 02m 03s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 03m 01s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 05m 07s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest - 2018.02.26 at 16h 06m 11s.xml">
-      <configuration name="ConwayGameOfLifeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest - 2018.02.26 at 15h 41m 14s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest2 - 2018.02.26 at 15h 42m 02s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConwayGameOfLifeTest_runTest2 - 2018.02.26 at 15h 42m 18s.xml">
-      <configuration name="ConwayGameOfLifeTest.runTest2" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1877" height="420" key="GridCell.Tab.0.bottom" timestamp="1582074020106">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.0.bottom/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960368" />
+    <state width="1238" height="284" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1582061931194" />
+    <state width="1877" height="420" key="GridCell.Tab.0.bottom/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020106" />
+    <state width="1877" height="420" key="GridCell.Tab.0.center" timestamp="1582074020105">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.0.center/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960367" />
+    <state width="1238" height="284" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1582061931192" />
+    <state width="1877" height="420" key="GridCell.Tab.0.center/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020105" />
+    <state width="1877" height="420" key="GridCell.Tab.0.left" timestamp="1582074020104">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.0.left/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960366" />
+    <state width="1238" height="284" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1582061931189" />
+    <state width="1877" height="420" key="GridCell.Tab.0.left/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020104" />
+    <state width="1877" height="420" key="GridCell.Tab.0.right" timestamp="1582074020105">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.0.right/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960367" />
+    <state width="1238" height="284" key="GridCell.Tab.0.right/0.23.1280.728@0.23.1280.728" timestamp="1582061931193" />
+    <state width="1877" height="420" key="GridCell.Tab.0.right/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020105" />
+    <state width="1877" height="556" key="GridCell.Tab.1.bottom" timestamp="1582073982700">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.1.bottom/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073962030" />
+    <state width="1238" height="357" key="GridCell.Tab.1.bottom/0.23.1280.728@0.23.1280.728" timestamp="1582061815581" />
+    <state width="1877" height="556" key="GridCell.Tab.1.bottom/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582073982700" />
+    <state width="1877" height="556" key="GridCell.Tab.1.center" timestamp="1582073982700">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.1.center/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073962029" />
+    <state width="1238" height="357" key="GridCell.Tab.1.center/0.23.1280.728@0.23.1280.728" timestamp="1582061815580" />
+    <state width="1877" height="556" key="GridCell.Tab.1.center/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582073982700" />
+    <state width="1877" height="556" key="GridCell.Tab.1.left" timestamp="1582073982700">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.1.left/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073962029" />
+    <state width="1238" height="357" key="GridCell.Tab.1.left/0.23.1280.728@0.23.1280.728" timestamp="1582061815580" />
+    <state width="1877" height="556" key="GridCell.Tab.1.left/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582073982700" />
+    <state width="1877" height="556" key="GridCell.Tab.1.right" timestamp="1582073982700">
+      <screen x="-293" y="-1057" width="1920" height="1008" />
+    </state>
+    <state width="1877" height="556" key="GridCell.Tab.1.right/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073962030" />
+    <state width="1238" height="357" key="GridCell.Tab.1.right/0.23.1280.728@0.23.1280.728" timestamp="1582061815581" />
+    <state width="1877" height="556" key="GridCell.Tab.1.right/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582073982700" />
     <state x="332" y="-822" width="670" height="676" key="search.everywhere.popup" timestamp="1582044887155">
       <screen x="-293" y="-1057" width="1920" height="1057" />
     </state>
     <state x="332" y="-822" width="670" height="676" key="search.everywhere.popup/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582044887155" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/zipcodeconway/ConwayGameOfLifeTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>
