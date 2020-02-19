@@ -32,7 +32,7 @@ public class ConwayGameOfLife
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(100);
-        int[][] endingWorld = sim.simulate(50000);
+        int[][] endingWorld = sim.simulate(5000);
     }
 
     // Contains the logic for the starting scenario.
@@ -75,8 +75,8 @@ public class ConwayGameOfLife
                 }
             }
             gameDisplay.display(currentWorld, i + 1);
-            gameDisplay.sleep(50);
-            copyAndZeroOut(currentWorld, futureWorld);
+            gameDisplay.sleep(15);
+            copyAndZeroOut(futureWorld, currentWorld);
         }
 
         return currentWorld;
@@ -89,8 +89,8 @@ public class ConwayGameOfLife
         {
             for(int col = 0; col < worldSize; col++)
             {
-                currentWorld[row][col] = futureWorld[row][col];
-                futureWorld[row][col] = 0;
+                current[row][col] = next[row][col];
+                next[row][col] = 0;
             }
         }
     }

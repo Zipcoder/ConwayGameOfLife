@@ -4,6 +4,7 @@
     <list default="true" id="e282cee1-bfe9-42a3-9794-9633eb4654d1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/ConwayGameOfLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodeconway/SimpleWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -75,7 +77,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConwayGameOfLifeTest.runTest2">
+  <component name="RunManager" selected="Application.ConwayGameOfLife">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -227,9 +229,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConwayGameOfLife" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest2" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest.runTest1" />
-        <item itemvalue="Application.ConwayGameOfLife" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest" />
         <item itemvalue="JUnit.ConwayGameOfLifeTest.isAliveTest" />
       </list>
@@ -250,6 +252,7 @@
       <workItem from="1582043345163" duration="1994000" />
       <workItem from="1582046016773" duration="7368000" />
       <workItem from="1582063465761" duration="840000" />
+      <workItem from="1582079649475" duration="863000" />
     </task>
     <servers />
   </component>
@@ -257,27 +260,31 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="420" key="GridCell.Tab.0.bottom" timestamp="1582074020106">
-      <screen x="-293" y="-1057" width="1920" height="1008" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1582080624512">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582080624512" />
     <state width="1877" height="556" key="GridCell.Tab.0.bottom/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960368" />
     <state width="1238" height="284" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1582061931194" />
     <state width="1877" height="420" key="GridCell.Tab.0.bottom/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020106" />
-    <state width="1877" height="420" key="GridCell.Tab.0.center" timestamp="1582074020105">
-      <screen x="-293" y="-1057" width="1920" height="1008" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1582080624512">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582080624512" />
     <state width="1877" height="556" key="GridCell.Tab.0.center/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960367" />
     <state width="1238" height="284" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1582061931192" />
     <state width="1877" height="420" key="GridCell.Tab.0.center/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020105" />
-    <state width="1877" height="420" key="GridCell.Tab.0.left" timestamp="1582074020104">
-      <screen x="-293" y="-1057" width="1920" height="1008" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1582080624512">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582080624512" />
     <state width="1877" height="556" key="GridCell.Tab.0.left/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960366" />
     <state width="1238" height="284" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1582061931189" />
     <state width="1877" height="420" key="GridCell.Tab.0.left/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020104" />
-    <state width="1877" height="420" key="GridCell.Tab.0.right" timestamp="1582074020105">
-      <screen x="-293" y="-1057" width="1920" height="1008" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1582080624512">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582080624512" />
     <state width="1877" height="556" key="GridCell.Tab.0.right/0.23.1280.728/-293.-1057.1920.1057@-293.-1057.1920.1057" timestamp="1582073960367" />
     <state width="1238" height="284" key="GridCell.Tab.0.right/0.23.1280.728@0.23.1280.728" timestamp="1582061931193" />
     <state width="1877" height="420" key="GridCell.Tab.0.right/0.23.1280.777/-293.-1057.1920.1008@-293.-1057.1920.1008" timestamp="1582074020105" />
